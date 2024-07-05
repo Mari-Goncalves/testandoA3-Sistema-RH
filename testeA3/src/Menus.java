@@ -3,6 +3,9 @@ import java.util.Scanner;
 public class Menus {
     Scanner sc = new Scanner(System.in);
 
+    int opcaoMenuInicial;
+
+    // Funções que auxiliam no layout do terminal.
     public void PularLinha(){
         System.out.println(" ");
     }
@@ -13,6 +16,7 @@ public class Menus {
         System.out.println("--------------------------------------------------");
     }
 
+    // Primeiro menu que é exibido ao iniciar o sistema.
     public void MostrarMenuInicial(){
         PularLinha();
 
@@ -27,7 +31,7 @@ public class Menus {
         PularLinha();
 
         EscreverMensagem("Digite a opção em que deseja se cadastrar: ");
-        int opcaoMenuInicial = sc.nextInt();
+        opcaoMenuInicial = sc.nextInt();
 
         LinhaTracejada();
         
@@ -47,5 +51,10 @@ public class Menus {
                 EscreverMensagem("Valor inválido! Tente novamente.");
                 break;
         }
+    }
+
+    // Menu exibido ao recrutador.
+    public void MostrarMenuRecrutador(){
+
     }
 }
