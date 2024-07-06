@@ -1,7 +1,7 @@
 public class Candidato extends Pessoa {
     private String endereco;
     private String cpf;
-    // private Curriculo curriculo; 
+    private Curriculo curriculo; 
 
 // *Como puxar enum?*
 // -ArrayList<Vagas>: Vaga

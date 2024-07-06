@@ -1,9 +1,9 @@
 public class Vaga {
     private String titulo;
-    // private DescricaoVaga descricaoVaga; 
+    private DescricaoVaga descricaoVaga; 
     private Empresa empresa; 
     private Recrutador recrutador; 
-    // private EstadoVaga estadoVaga; 
+    private EstadoVaga estadoVaga; 
 
     public void ExibirVaga(){
 
