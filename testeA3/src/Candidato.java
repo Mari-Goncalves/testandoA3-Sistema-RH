@@ -4,12 +4,14 @@ public class Candidato extends Pessoa {
     private String endereco;
     private String cpf;
     private Curriculo curriculo;
-
-    Scanner sc = new Scanner(System.in);
-
+    
     // *Como puxar enum?*
     // -ArrayList<Vagas>: Vaga
 
+    Scanner sc = new Scanner(System.in);
+    Curriculo curriculoCandidato = new Curriculo();
+
+    // Método construtor - 1º método chamado após a classe ser intanciada.
     public Candidato() {
         MenuCandidato();
     }
@@ -33,7 +35,7 @@ public class Candidato extends Pessoa {
     public void MenuCandidato() {
         Atalhos atalhos = new Atalhos();
 
-        System.out.print("Olá candidato(a)! Você deseja: \n");
+        atalhos.EscreverMensagem("Olá candidato(a)! Você deseja: \n");
 
         atalhos.PularLinha();
 
@@ -66,6 +68,8 @@ public class Candidato extends Pessoa {
                 break;
         }
 
+        sc.close();
+
     }
     // Acho que o candidato só podeá ver uma lista com vagas, sem pesquisar.
     // public void PesquisarVagas() {
@@ -73,7 +77,7 @@ public class Candidato extends Pessoa {
     // }
 
     public void CriarCurriculo() {
-        // Curriculo curriculoCandidato = new Curriculo();
+        curriculoCandidato.CriarCurriculo();
     }
 
     public void AtualizarCurriculo() {
@@ -85,13 +89,5 @@ public class Candidato extends Pessoa {
     }
     public void ListarCandidaturas() {
 
-    }
-
-    public Curriculo getCurriculo() {
-        return curriculo;
-    }
-
-    public void setCurriculo(Curriculo curriculo) {
-        this.curriculo = curriculo;
     }
 }
