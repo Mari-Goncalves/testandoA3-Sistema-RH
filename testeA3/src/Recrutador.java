@@ -31,6 +31,12 @@ public class Recrutador extends Pessoa {
     public void EditarStatusCandidatura(){
 
     }
+    public void CriarVaga(){
+
+    }
+    public void EditarVaga(){
+
+    }
     public void ListarVagas(){
 
     }

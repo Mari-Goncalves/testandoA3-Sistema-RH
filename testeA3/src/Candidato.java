@@ -35,4 +35,11 @@ public class Candidato extends Pessoa {
 
     }
 
+    public Curriculo getCurriculo() {
+        return curriculo;
+    }
+
+    public void setCurriculo(Curriculo curriculo) {
+        this.curriculo = curriculo;
+    }
 }
