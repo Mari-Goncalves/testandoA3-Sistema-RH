@@ -5,6 +5,15 @@ public class Curriculo {
     private String habilidades;
     private String experiencias;
 
+    public Curriculo(String formacao, String nivelEscolaridade, String objetivos, String habilidades,
+            String experiencias) {
+        this.formacao = formacao;
+        this.nivelEscolaridade = nivelEscolaridade;
+        this.objetivos = formacao;
+        this.habilidades = habilidades;
+        this.experiencias = experiencias;
+    }
+
     public String getFormacao() {
         return formacao;
     }
