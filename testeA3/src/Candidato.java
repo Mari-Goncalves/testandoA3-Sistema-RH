@@ -22,10 +22,14 @@ public class Candidato extends Pessoa {
     }
 
     public void ExibirOpcoesMenuCandidato(){
+
+        atalhos.LinhaTracejada();
+        atalhos.PularLinha();
         atalhos.EscreverMensagem("1-Criar currículo \n");
-        atalhos.EscreverMensagem("2-Atualizar curriculo \n");
-        atalhos.EscreverMensagem("3-Ver vagas disponiveis \n");
-        atalhos.EscreverMensagem("4-Listar candidaturas \n");
+        atalhos.EscreverMensagem("2-Visualiar currículo \n");
+        atalhos.EscreverMensagem("3-Atualizar curriculo \n");
+        atalhos.EscreverMensagem("4-Ver vagas disponiveis \n");
+        atalhos.EscreverMensagem("5-Listar candidaturas \n");
 
         atalhos.PularLinha();
     }
@@ -34,29 +38,38 @@ public class Candidato extends Pessoa {
         atalhos.EscreverMensagem("Escolha uma opção: ");
         opcaoMenuCandidato = sc.nextInt();
 
+        atalhos.PularLinha();
+        atalhos.LinhaTracejada();
+
         switch (opcaoMenuCandidato) {
             case 1:
                 if (!isCurriculoCriado) {
                     CriarCurriculo();
                 } else {
                     atalhos.EscreverMensagem("Seu curriculo já foi criado. \n");
+                    ExibirMenuCandidato();
                 }
                 break;
 
             case 2:
-                AtualizarCurriculo();
+                VisualizarCurriculo();
                 break;
 
             case 3:
-                ListarVagasDisponiveis();
+                AtualizarCurriculo();
                 break;
 
             case 4:
+                ListarVagasDisponiveis();
+                break;
+
+            case 5:
                 ListarCandidaturas();
                 break;
 
             default:
                 atalhos.EscreverMensagem("Valor inválido! Tente novamente. \n");
+                ExibirMenuCandidato();
                 break;
         }
     }
@@ -72,16 +85,24 @@ public class Candidato extends Pessoa {
         ExibirMenuCandidato();
     }
 
-    public void AtualizarCurriculo() {
+    public void VisualizarCurriculo() {
+        atalhos.EscreverMensagem("VisualizarCurriculo... \n");
+        ExibirMenuCandidato();
+    }
 
+    public void AtualizarCurriculo() {
+        atalhos.EscreverMensagem("AtualizarCurriculo... \n");
+        ExibirMenuCandidato();
     }
 
     public void ListarVagasDisponiveis() {
-
+        atalhos.EscreverMensagem("ListarVagasDisponiveis... \n");
+        ExibirMenuCandidato();
     }
     
     public void ListarCandidaturas() {
-
+        atalhos.EscreverMensagem("ListarCandidaturas... \n");
+        ExibirMenuCandidato();
     }
 
     public String getEndereco() {
