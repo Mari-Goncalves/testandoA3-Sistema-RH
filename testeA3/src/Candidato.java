@@ -22,9 +22,9 @@ public class Candidato extends Pessoa {
     }
 
     public void ExibirOpcoesMenuCandidato(){
-
         atalhos.LinhaTracejada();
         atalhos.PularLinha();
+
         atalhos.EscreverMensagem("1-Criar currículo \n");
         atalhos.EscreverMensagem("2-Visualiar currículo \n");
         atalhos.EscreverMensagem("3-Atualizar curriculo \n");
@@ -50,23 +50,18 @@ public class Candidato extends Pessoa {
                     ExibirMenuCandidato();
                 }
                 break;
-
             case 2:
                 VisualizarCurriculo();
                 break;
-
             case 3:
                 AtualizarCurriculo();
                 break;
-
             case 4:
                 ListarVagasDisponiveis();
                 break;
-
             case 5:
                 ListarCandidaturas();
                 break;
-
             default:
                 atalhos.EscreverMensagem("Valor inválido! Tente novamente. \n");
                 ExibirMenuCandidato();
