@@ -37,6 +37,9 @@ public class Curriculo {
         atalhos.EscreverMensagem("Experiências: ");
         String experienciasCandidato = sc.nextLine();
 
+        atalhos.PularLinha();
+
+        atalhos.EscreverMensagem("Curriculo criado com sucesso! \n");
         atalhos.LinhaTracejada();
 
         this.formacao = formacaoCandidato;
@@ -44,8 +47,6 @@ public class Curriculo {
         this.objetivos = objetivosCandidato;
         this.habilidades = habilidadesCandidato;
         this.experiencias = experienciasCandidato;
-
-        sc.close();
     }
 
     public void VerResultadoCurriculo() {
