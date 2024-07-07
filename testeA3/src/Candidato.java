@@ -3,13 +3,11 @@ import java.util.Scanner;
 public class Candidato extends Pessoa {
     private String endereco;
     private String cpf;
-    private Curriculo curriculo;
-    
+    Curriculo curriculoCandidato = new Curriculo();
     // *Como puxar enum?*
     // -ArrayList<Vagas>: Vaga
 
     Scanner sc = new Scanner(System.in);
-    Curriculo curriculoCandidato = new Curriculo();
     boolean isCurriculoCriado = false;
     Atalhos atalhos = new Atalhos();
     int opcaoMenuCandidato;
@@ -25,11 +23,11 @@ public class Candidato extends Pessoa {
         atalhos.LinhaTracejada();
         atalhos.PularLinha();
 
-        atalhos.EscreverMensagem("1-Criar currículo \n");
-        atalhos.EscreverMensagem("2-Visualiar currículo \n");
-        atalhos.EscreverMensagem("3-Atualizar curriculo \n");
-        atalhos.EscreverMensagem("4-Ver vagas disponiveis \n");
-        atalhos.EscreverMensagem("5-Listar candidaturas \n");
+        atalhos.EscreverMensagem("1-Criar currículo\n");
+        atalhos.EscreverMensagem("2-Visualiar currículo\n");
+        atalhos.EscreverMensagem("3-Atualizar currículo\n");
+        atalhos.EscreverMensagem("4-Ver vagas disponiveis\n");
+        atalhos.EscreverMensagem("5-Listar candidaturas\n");
 
         atalhos.PularLinha();
     }
@@ -46,7 +44,7 @@ public class Candidato extends Pessoa {
                 if (!isCurriculoCriado) {
                     CriarCurriculo();
                 } else {
-                    atalhos.EscreverMensagem("Seu curriculo já foi criado. \n");
+                    atalhos.EscreverMensagem("Seu currículo já foi criado. \n");
                     ExibirMenuCandidato();
                 }
                 break;
@@ -75,19 +73,33 @@ public class Candidato extends Pessoa {
     }
 
     public void CriarCurriculo() {
+        atalhos.EscreverMensagem("Opção 1 | Criar currículo\n");
         curriculoCandidato.CriarCurriculo();
         isCurriculoCriado = true;
         ExibirMenuCandidato();
     }
 
     public void VisualizarCurriculo() {
-        atalhos.EscreverMensagem("VisualizarCurriculo... \n");
+        if (isCurriculoCriado) {
+            atalhos.EscreverMensagem("Opção 2 | Visualizar currículo\n");
+            curriculoCandidato.VerResultadoCurriculo();
+        } else {
+            atalhos.EscreverMensagem("Seu currículo ainda não foi criado. \n");
+        }
+        
         ExibirMenuCandidato();
     }
 
     public void AtualizarCurriculo() {
-        atalhos.EscreverMensagem("AtualizarCurriculo... \n");
+        if (isCurriculoCriado) {
+            atalhos.EscreverMensagem("Opção 3 | Atualizar currículo\n");
+            atalhos.EscreverMensagem("AtualizarCurriculo... \n");
+        } else {
+            atalhos.EscreverMensagem("Seu currículo ainda não foi criado. \n");
+        }
+
         ExibirMenuCandidato();
+        
     }
 
     public void ListarVagasDisponiveis() {
