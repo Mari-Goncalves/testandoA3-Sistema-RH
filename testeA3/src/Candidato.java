@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Candidato extends Pessoa {
+public class Candidato {
     private String endereco;
     private String cpf;
     Curriculo curriculoCandidato = new Curriculo();

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Recrutador extends Pessoa {
+public class Recrutador {
     private String cargo;
     private String empresa;
     private Vaga vaga = new Vaga(); 
