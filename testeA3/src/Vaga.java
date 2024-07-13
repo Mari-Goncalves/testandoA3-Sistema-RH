@@ -9,13 +9,13 @@ public class Vaga {
     private Recrutador recrutador; 
     private EstadoVaga estadoVaga; 
 
-    public void ExibirVaga(){
+    public void CriarVaga(){
 
     }
-    public void EditarVaga(){
+    public void VisualizarVaga(){
 
     }
-    public void ExcluirVaga(){
+    public void AtualizarVaga(){
 
     }
 }
