@@ -7,76 +7,57 @@ public class Vaga {
     private String cargaHoraria;
     private String tipoContrato;
     private String modalidade;
-    private String empresa; 
-    private String recrutador; 
-    private String estadoVaga; 
+    private String empresa;
+    private String recrutador;
+    private String estadoVaga;
 
     Atalhos atalhos = new Atalhos();
     Scanner sc = new Scanner(System.in);
 
-    public void CriarVaga(){
+    public void CriarVaga() {
         atalhos.LinhaTracejada();
 
         atalhos.EscreverMensagem("Título: ");
-        String tituloVaga = sc.nextLine();
-
+        this.titulo = sc.nextLine();
         atalhos.PularLinha();
-        
-        atalhos.EscreverMensagem("Requisitos: ");
-        String requisitoVaga = sc.nextLine();
 
+        atalhos.EscreverMensagem("Requisitos: ");
+        this.requisito = sc.nextLine();
         atalhos.PularLinha();
 
         atalhos.EscreverMensagem("Salário: ");
-        String salarioVaga = sc.nextLine();
-
+        this.salario = sc.nextLine();
         atalhos.PularLinha();
 
         atalhos.EscreverMensagem("Carga horaria: ");
-        String cargaHorariaVaga = sc.nextLine();
-
+        this.cargaHoraria = sc.nextLine();
         atalhos.PularLinha();
 
         atalhos.EscreverMensagem("Tipo de contrato: ");
-        String tipoContratoVaga = sc.nextLine();
-
+        this.tipoContrato = sc.nextLine();
         atalhos.PularLinha();
 
         atalhos.EscreverMensagem("Modalidade: ");
-        String modalidadeVaga = sc.nextLine();
-
+        this.modalidade = sc.nextLine();
         atalhos.PularLinha();
 
         atalhos.EscreverMensagem("Empresa: ");
-        String empresaVaga = sc.nextLine();
-
+        this.empresa = sc.nextLine();
         atalhos.PularLinha();
 
         atalhos.EscreverMensagem("Recrutador responsável: ");
-        String recrutadorVaga = sc.nextLine();
-
+        this.recrutador = sc.nextLine();
         atalhos.PularLinha();
 
         atalhos.EscreverMensagem("Status da vaga (aberta, em andamento ou fechada): ");
-        String estadoVagaVaga = sc.nextLine();
-
+        this.estadoVaga = sc.nextLine();
         atalhos.PularLinha();
 
         atalhos.EscreverMensagem("Vaga criada com sucesso! \n");
         atalhos.LinhaTracejada();
-        
-        this.titulo = tituloVaga;
-        this.requisito = requisitoVaga;
-        this.salario = salarioVaga;
-        this.cargaHoraria = cargaHorariaVaga;
-        this.tipoContrato = tipoContratoVaga;
-        this.modalidade = modalidadeVaga;
-        this.empresa = empresaVaga;
-        this.recrutador = recrutadorVaga;
-        this.estadoVaga = estadoVagaVaga;
     }
 
-    public void VisualizarVaga(){
+    public void VisualizarVaga() {
         atalhos.LinhaTracejada();
 
         System.out.printf("Título: %s \n", titulo);
@@ -95,97 +76,105 @@ public class Vaga {
         atalhos.PularLinha();
         System.out.printf("Recrutador: %s \n", recrutador);
         atalhos.PularLinha();
-        System.out.printf("Estado da vga: %s \n", estadoVaga);
+        System.out.printf("Estado da vaga: %s \n", estadoVaga);
         atalhos.PularLinha();
 
         atalhos.LinhaTracejada();
     }
 
-    public void AtualizarVaga(){
-        atalhos.LinhaTracejada();
+    // public void AtualizarVaga() {
+    //     atalhos.LinhaTracejada();
 
-        atalhos.EscreverMensagem("Título: ");
-        String titulo = sc.nextLine();
-        setTitulo(titulo);
-        atalhos.PularLinha();
+    //     atalhos.EscreverMensagem("Título: ");
+    //     String titulo = sc.nextLine();
+    //     setTitulo(titulo);
+    //     atalhos.PularLinha();
 
-        atalhos.EscreverMensagem("Requisito: ");
-        String requisito = sc.nextLine();
-        setRequisito(requisito);
-        atalhos.PularLinha();
+    //     atalhos.EscreverMensagem("Requisito: ");
+    //     String requisito = sc.nextLine();
+    //     setRequisito(requisito);
+    //     atalhos.PularLinha();
 
-        atalhos.EscreverMensagem("Salário: ");
-        String salario = sc.nextLine();
-        setSalario(salario);
-        atalhos.PularLinha();
+    //     atalhos.EscreverMensagem("Salário: ");
+    //     String salario = sc.nextLine();
+    //     setSalario(salario);
+    //     atalhos.PularLinha();
 
-        atalhos.EscreverMensagem("Carga horaria: ");
-        String cargaHoraria = sc.nextLine();
-        setCargaHoraria(cargaHoraria);
-        atalhos.PularLinha();
+    //     atalhos.EscreverMensagem("Carga horaria: ");
+    //     String cargaHoraria = sc.nextLine();
+    //     setCargaHoraria(cargaHoraria);
+    //     atalhos.PularLinha();
 
-        atalhos.EscreverMensagem("Tipo de contrato: ");
-        String tipoContrato = sc.nextLine();
-        setTipoContrato(tipoContrato);
-        atalhos.PularLinha();
+    //     atalhos.EscreverMensagem("Tipo de contrato: ");
+    //     String tipoContrato = sc.nextLine();
+    //     setTipoContrato(tipoContrato);
+    //     atalhos.PularLinha();
 
-        atalhos.EscreverMensagem("Modalidade: ");
-        String modalidade = sc.nextLine();
-        setModalidade(modalidade);
-        atalhos.PularLinha();
+    //     atalhos.EscreverMensagem("Modalidade: ");
+    //     String modalidade = sc.nextLine();
+    //     setModalidade(modalidade);
+    //     atalhos.PularLinha();
 
-        atalhos.EscreverMensagem("Empresa: ");
-        String empresa = sc.nextLine();
-        setEmpresa(empresa);
-        atalhos.PularLinha();
+    //     atalhos.EscreverMensagem("Empresa: ");
+    //     String empresa = sc.nextLine();
+    //     setEmpresa(empresa);
+    //     atalhos.PularLinha();
 
-        atalhos.EscreverMensagem("Recrutador: ");
-        String recrutador = sc.nextLine();
-        setRecrutador(recrutador);
-        atalhos.PularLinha();
-        
-        atalhos.EscreverMensagem("Estado da vga: ");
-        String estadoVaga = sc.nextLine();
-        setEstadoVaga(estadoVaga);
+    //     atalhos.EscreverMensagem("Recrutador: ");
+    //     String recrutador = sc.nextLine();
+    //     setRecrutador(recrutador);
+    //     atalhos.PularLinha();
 
-        atalhos.PularLinha();
+    //     atalhos.EscreverMensagem("Estado da vga: ");
+    //     String estadoVaga = sc.nextLine();
+    //     setEstadoVaga(estadoVaga);
 
-        this.titulo = titulo;
-        this.requisito = requisito;
-        this.salario = salario;
-        this.cargaHoraria = cargaHoraria;
-        this.tipoContrato = tipoContrato;
-        this.modalidade = modalidade;
-        this.empresa = empresa;
-        this.recrutador = recrutador;
-        this.estadoVaga = estadoVaga;
-    }
+    //     atalhos.PularLinha();
 
-    public void setTitulo(String titulo) {
-    this.titulo = titulo;
-    }
-    public void setRequisito(String requisito) {
-    this.requisito = requisito;
-    }
-    public void setSalario(String salario) {
-    this.salario = salario;
-    }
-    public void setCargaHoraria(String cargaHoraria) {
-    this.cargaHoraria = cargaHoraria;
-    }
-    public void setTipoContrato(String tipoContrato) {
-    this.tipoContrato = tipoContrato;
-    }
-    public void setModalidade(String modalidade) {
-    this.modalidade = modalidade;
-    }
-    public void setEmpresa(String empresa) {
-    this.empresa = empresa;
-    }
-    public void setRecrutador(String recrutador) {
-    this.recrutador = recrutador;
-    }
-    public void setEstadoVaga(String estadoVaga) {
-    this.estadoVaga = estadoVaga;
-    }
+    //     this.titulo = titulo;
+    //     this.requisito = requisito;
+    //     this.salario = salario;
+    //     this.cargaHoraria = cargaHoraria;
+    //     this.tipoContrato = tipoContrato;
+    //     this.modalidade = modalidade;
+    //     this.empresa = empresa;
+    //     this.recrutador = recrutador;
+    //     this.estadoVaga = estadoVaga;
+    // }
+
+    // public void setTitulo(String titulo) {
+    //     this.titulo = titulo;
+    // }
+
+    // public void setRequisito(String requisito) {
+    //     this.requisito = requisito;
+    // }
+
+    // public void setSalario(String salario) {
+    //     this.salario = salario;
+    // }
+
+    // public void setCargaHoraria(String cargaHoraria) {
+    //     this.cargaHoraria = cargaHoraria;
+    // }
+
+    // public void setTipoContrato(String tipoContrato) {
+    //     this.tipoContrato = tipoContrato;
+    // }
+
+    // public void setModalidade(String modalidade) {
+    //     this.modalidade = modalidade;
+    // }
+
+    // public void setEmpresa(String empresa) {
+    //     this.empresa = empresa;
+    // }
+
+    // public void setRecrutador(String recrutador) {
+    //     this.recrutador = recrutador;
+    // }
+
+    // public void setEstadoVaga(String estadoVaga) {
+    //     this.estadoVaga = estadoVaga;
+    // }
 }
