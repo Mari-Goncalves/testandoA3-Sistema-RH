@@ -42,19 +42,28 @@ public class Recrutador extends Pessoa {
                 isVagaCriada = true;
                 ExibirMenuRecrutador();
                 break;
+
             case 2:
                 atalhos.EscreverMensagem("Opção 2 | Visualizar vaga\n");
-
                 if(isVagaCriada){
                     vaga.VisualizarVaga();
                 } else {
                     atalhos.EscreverMensagem("Não há vagas criadas no momento. \n");
                 }
-
                 ExibirMenuRecrutador();
                 break;
+
             case 3:
+                atalhos.EscreverMensagem("Opção 3 | Atualizar vaga\n");
+                if (isVagaCriada) {
+                    vaga.AtualizarVaga();
+                } else {
+                    atalhos.EscreverMensagem("Não há vagas criadas no momento. \n");
+                }
+                ExibirMenuRecrutador();
+
                 break;
+
             default:
                 atalhos.EscreverMensagem("Valor inválido! Tente novamente. \n");
                 ExibirMenuRecrutador();
@@ -65,18 +74,6 @@ public class Recrutador extends Pessoa {
     public void ExibirMenuRecrutador() {
         ExibirOpcoesMenuRecrutador();
         ValidarOpcaoMenurRecrutador();
-    }
-
-    public void VisualizarVaga() {
-        atalhos.EscreverMensagem("Opção 2 | Visualizar vaga\n");
-        // vaga.VisualizarVaga();
-        ExibirMenuRecrutador();
-    }
-
-    public void AtualizarVaga() {
-        atalhos.EscreverMensagem("Opção 3 | Atualizar vaga\n");
-        // vaga.AtualizarVaga();
-        ExibirMenuRecrutador();
     }
 
     // public String getCargo() {
