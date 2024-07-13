@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Candidato extends Pessoa {
+public class Candidato {
     private String endereco;
     private String cpf;
     Curriculo curriculoCandidato = new Curriculo();
@@ -11,6 +11,7 @@ public class Candidato extends Pessoa {
     boolean isCurriculoCriado = false;
     Atalhos atalhos = new Atalhos();
     int opcaoMenuCandidato;
+    String atualizarExperiencia;
 
     // Método construtor - 1º método chamado após a classe ser intanciada.
     public Candidato() {
@@ -93,7 +94,8 @@ public class Candidato extends Pessoa {
     public void AtualizarCurriculo() {
         if (isCurriculoCriado) {
             atalhos.EscreverMensagem("Opção 3 | Atualizar currículo\n");
-            atalhos.EscreverMensagem("AtualizarCurriculo... \n");
+            curriculoCandidato.AtualizarCurriculo();
+
         } else {
             atalhos.EscreverMensagem("Seu currículo ainda não foi criado. \n");
         }
@@ -110,21 +112,5 @@ public class Candidato extends Pessoa {
     public void ListarCandidaturas() {
         atalhos.EscreverMensagem("ListarCandidaturas... \n");
         ExibirMenuCandidato();
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
     }
 }
