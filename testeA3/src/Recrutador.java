@@ -2,7 +2,8 @@ import java.util.Scanner;
 
 public class Recrutador extends Pessoa {
     private String cargo;
-    private String empresa; 
+    private String empresa;
+    private Vaga vaga; 
 
     Scanner sc = new Scanner(System.in);
     boolean isCurriculoCriado = false;
@@ -55,16 +56,19 @@ public class Recrutador extends Pessoa {
 
     public void CriarVaga() {
         atalhos.EscreverMensagem("Opção 1 | Criar vaga\n");
+        // vaga.CriarVaga();
         ExibirMenuRecrutador();
     }
 
     public void VisualizarVaga() {
         atalhos.EscreverMensagem("Opção 2 | Visualizar vaga\n");
+        // vaga.VisualizarVaga();
         ExibirMenuRecrutador();
     }
 
     public void AtualizarVaga() {
         atalhos.EscreverMensagem("Opção 3 | Atualizar vaga\n");
+        // vaga.AtualizarVaga();
         ExibirMenuRecrutador();
     }
 
