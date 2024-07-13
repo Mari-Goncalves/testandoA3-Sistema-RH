@@ -9,10 +9,9 @@ public class Curriculo {
     private String nome;
 
     Atalhos atalhos = new Atalhos();
+    Scanner sc = new Scanner(System.in);
 
     public void CriarCurriculo() {
-        Scanner sc = new Scanner(System.in);
-
         atalhos.LinhaTracejada();
 
         atalhos.EscreverMensagem("Nome: ");
@@ -80,11 +79,61 @@ public class Curriculo {
         atalhos.LinhaTracejada();
     }
 
+    public void AtualizarCurriculo(){
+        atalhos.LinhaTracejada();
+
+        atalhos.EscreverMensagem("Nome: ");
+        String nome = sc.nextLine();
+        setNome(nome);
+
+        atalhos.PularLinha();
+
+        atalhos.EscreverMensagem("Formação: ");
+        String formacaoCandidato = sc.nextLine();
+        setFormacao(formacaoCandidato);
+
+        atalhos.PularLinha();
+
+        atalhos.EscreverMensagem("Nível de escolaridade: ");
+        String nivelEscolaridadeCandidato = sc.nextLine();
+        setNivelEscolaridade(nivelEscolaridadeCandidato);
+
+        atalhos.PularLinha();
+
+        atalhos.EscreverMensagem("Objetivos: ");
+        String objetivosCandidato = sc.nextLine();
+        setObjetivos(objetivosCandidato);
+
+        atalhos.PularLinha();
+
+        atalhos.EscreverMensagem("Habilidades: ");
+        String habilidadesCandidato = sc.nextLine();
+        setHabilidades(habilidadesCandidato);
+
+        atalhos.PularLinha();
+
+        atalhos.EscreverMensagem("Experiências: ");
+        String experienciasCandidato = sc.nextLine();
+        setExperiencias(experienciasCandidato);
+
+        atalhos.PularLinha();
+
+        atalhos.EscreverMensagem("Curriculo atualizado com sucesso! \n");
+        atalhos.LinhaTracejada();
+
+        this.formacao = formacaoCandidato;
+        this.nivelEscolaridade = nivelEscolaridadeCandidato;
+        this.objetivos = objetivosCandidato;
+        this.habilidades = habilidadesCandidato;
+        this.experiencias = experienciasCandidato;
+        this.nome = nome;
+    }
+
     public String getNome() {
         return nome;
     }
 
-    public void set(String nome) {
+    public void setNome(String nome) {
         this.nome = nome;
     }
 

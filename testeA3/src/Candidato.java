@@ -11,6 +11,7 @@ public class Candidato extends Pessoa {
     boolean isCurriculoCriado = false;
     Atalhos atalhos = new Atalhos();
     int opcaoMenuCandidato;
+    String atualizarExperiencia;
 
     // Método construtor - 1º método chamado após a classe ser intanciada.
     public Candidato() {
@@ -93,7 +94,8 @@ public class Candidato extends Pessoa {
     public void AtualizarCurriculo() {
         if (isCurriculoCriado) {
             atalhos.EscreverMensagem("Opção 3 | Atualizar currículo\n");
-            atalhos.EscreverMensagem("AtualizarCurriculo... \n");
+            curriculoCandidato.AtualizarCurriculo();
+
         } else {
             atalhos.EscreverMensagem("Seu currículo ainda não foi criado. \n");
         }
