@@ -61,6 +61,9 @@ public class Vaga {
         String estadoVagaVaga = sc.nextLine();
 
         atalhos.PularLinha();
+
+        atalhos.EscreverMensagem("Vaga criada com sucesso! \n");
+        atalhos.LinhaTracejada();
         
         this.titulo = tituloVaga;
         this.requisito = requisitoVaga;
@@ -72,10 +75,32 @@ public class Vaga {
         this.recrutador = recrutadorVaga;
         this.estadoVaga = estadoVagaVaga;
     }
-    
-    // public void VisualizarVaga(){
 
-    // }
+    public void VisualizarVaga(){
+        atalhos.LinhaTracejada();
+
+        System.out.printf("Título: %s \n", titulo);
+        atalhos.PularLinha();
+        System.out.printf("Requisito: %s \n", requisito);
+        atalhos.PularLinha();
+        System.out.printf("Salário: %s \n", salario);
+        atalhos.PularLinha();
+        System.out.printf("Carga horaria: %s \n", cargaHoraria);
+        atalhos.PularLinha();
+        System.out.printf("Tipo de contrato: %s \n", tipoContrato);
+        atalhos.PularLinha();
+        System.out.printf("Modalidade: %s \n", modalidade);
+        atalhos.PularLinha();
+        System.out.printf("Empresa: %s \n", empresa);
+        atalhos.PularLinha();
+        System.out.printf("Eecrutador: %s \n", recrutador);
+        atalhos.PularLinha();
+        System.out.printf("Estado da vga: %s \n", estadoVaga);
+        atalhos.PularLinha();
+
+        atalhos.LinhaTracejada();
+    }
+
     // public void AtualizarVaga(){
 
     // }

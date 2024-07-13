@@ -6,12 +6,12 @@ public class Recrutador extends Pessoa {
     private Vaga vaga = new Vaga(); 
 
     Scanner sc = new Scanner(System.in);
-    boolean isCurriculoCriado = false;
+    boolean isVagaCriada = false;
     Atalhos atalhos = new Atalhos();
     int opcaoMenuRecrutador;
     String atualizarExperiencia;
 
- public Recrutador() {
+    public Recrutador() {
         atalhos.EscreverMensagem("Olá recrutador(a)! Você deseja: \n");
         atalhos.PularLinha();
         ExibirMenuRecrutador();
@@ -39,9 +39,19 @@ public class Recrutador extends Pessoa {
             case 1:
                 atalhos.EscreverMensagem("Opção 1 | Criar vaga\n");
                 vaga.CriarVaga();
+                isVagaCriada = true;
                 ExibirMenuRecrutador();
                 break;
             case 2:
+                atalhos.EscreverMensagem("Opção 2 | Visualizar vaga\n");
+
+                if(isVagaCriada){
+                    vaga.VisualizarVaga();
+                } else {
+                    atalhos.EscreverMensagem("Não há vagas criadas no momento. \n");
+                }
+
+                ExibirMenuRecrutador();
                 break;
             case 3:
                 break;
