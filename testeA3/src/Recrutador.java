@@ -62,9 +62,7 @@ public class Recrutador {
                 if (listaDeVagas.isEmpty()) {
                     atalhos.EscreverMensagem("Não há vagas criadas no momento. \n");
                 } else {
-                    // Você pode adicionar lógica aqui para atualizar uma vaga específica
-                    // Por exemplo, pedir ao usuário para selecionar uma vaga e então atualizar essa
-                    // vaga
+                    AtualizarVaga();
                 }
                 ExibirMenuRecrutador();
                 break;
@@ -74,6 +72,20 @@ public class Recrutador {
                 ExibirMenuRecrutador();
                 break;
         }
+    }
+
+    public void AtualizarVaga() {
+        atalhos.EscreverMensagem("Digite o ID da vaga que deseja atualizar: ");
+        int idVaga = sc.nextInt();
+        sc.nextLine(); // Consome a nova linha deixada pelo nextInt()
+
+        for (Vaga vaga : listaDeVagas) {
+            if (vaga.getId() == idVaga) {
+                vaga.AtualizarVaga();
+                return;
+            }
+        }
+        atalhos.EscreverMensagem("Vaga com ID " + idVaga + " não encontrada. \n");
     }
 
     public void ExibirMenuRecrutador() {
