@@ -6,6 +6,7 @@ public class Curriculo {
     private String objetivos;
     private String habilidades;
     private String experiencias;
+    private String nome;
 
     Atalhos atalhos = new Atalhos();
 
@@ -13,6 +14,11 @@ public class Curriculo {
         Scanner sc = new Scanner(System.in);
 
         atalhos.LinhaTracejada();
+
+        atalhos.EscreverMensagem("Nome: ");
+        String nome = sc.nextLine();
+
+        atalhos.PularLinha();
 
         atalhos.EscreverMensagem("Formação: ");
         String formacaoCandidato = sc.nextLine();
@@ -37,6 +43,9 @@ public class Curriculo {
         atalhos.EscreverMensagem("Experiências: ");
         String experienciasCandidato = sc.nextLine();
 
+        atalhos.PularLinha();
+
+        atalhos.EscreverMensagem("Curriculo criado com sucesso! \n");
         atalhos.LinhaTracejada();
 
         this.formacao = formacaoCandidato;
@@ -44,12 +53,14 @@ public class Curriculo {
         this.objetivos = objetivosCandidato;
         this.habilidades = habilidadesCandidato;
         this.experiencias = experienciasCandidato;
-
-        sc.close();
+        this.nome = nome;
     }
 
     public void VerResultadoCurriculo() {
         atalhos.LinhaTracejada();
+
+        System.out.printf("Nome: %s \n", nome);
+        atalhos.PularLinha();
 
         System.out.printf("Formação: %s \n", formacao);
         atalhos.PularLinha();
@@ -67,6 +78,14 @@ public class Curriculo {
         atalhos.PularLinha();
 
         atalhos.LinhaTracejada();
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void set(String nome) {
+        this.nome = nome;
     }
 
     public String getFormacao() {
