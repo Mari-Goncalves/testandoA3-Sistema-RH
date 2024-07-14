@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.Scanner;
 
-public class Recrutador {
+public class Recrutador implements IMenus {
     private String cargo;
     private String empresa;
     private List<Vaga> listaDeVagas = GerenciadorDeListas.getListaDeVagas();
@@ -13,10 +13,10 @@ public class Recrutador {
     public Recrutador() {
         atalhos.escreverMensagem("Olá recrutador(a)! Você deseja: \n");
         atalhos.pularLinha();
-        ExibirMenuRecrutador();
+        exibirMenu();
     }
 
-    public void exibirOpcoesMenuRecrutador() {
+    public void exibirOpcoesMenu() {
         atalhos.linhaTracejada();
         atalhos.pularLinha();
 
@@ -28,7 +28,7 @@ public class Recrutador {
         atalhos.pularLinha();
     }
 
-    public void validarOpcaoMenuRecrutador() {
+    public void validarOpcaoMenu() {
         atalhos.escreverMensagem("Escolha uma opção: ");
         opcaoMenuRecrutador = sc.nextInt();
         sc.nextLine(); // Consome a nova linha deixada pelo nextInt()
@@ -42,7 +42,7 @@ public class Recrutador {
                 Vaga novaVaga = new Vaga();
                 novaVaga.criar();
                 GerenciadorDeListas.adicionarVaga(novaVaga); // Adiciona a nova vaga ao GerenciadorDeListas
-                ExibirMenuRecrutador();
+                exibirMenu();
                 break;
 
             case 2:
@@ -54,7 +54,7 @@ public class Recrutador {
                         vaga.visualizar();
                     }
                 }
-                ExibirMenuRecrutador();
+                exibirMenu();
                 break;
 
             case 3:
@@ -64,7 +64,7 @@ public class Recrutador {
                 } else {
                     atualizarVaga();
                 }
-                ExibirMenuRecrutador();
+                exibirMenu();
                 break;
 
             case 4:
@@ -73,7 +73,7 @@ public class Recrutador {
 
             default:
                 atalhos.escreverMensagem("Valor inválido! Tente novamente. \n");
-                ExibirMenuRecrutador();
+                exibirMenu();
                 break;
         }
     }
@@ -92,8 +92,8 @@ public class Recrutador {
         atalhos.escreverMensagem("Vaga com ID " + idVaga + " não encontrada. \n");
     }
 
-    public void ExibirMenuRecrutador() {
-        exibirOpcoesMenuRecrutador();
-        validarOpcaoMenuRecrutador();
+    public void exibirMenu() {
+        exibirOpcoesMenu();
+        validarOpcaoMenu();
     }
 }

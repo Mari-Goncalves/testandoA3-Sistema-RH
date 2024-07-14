@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.Scanner;
 
-public class Candidato {
+public class Candidato implements IMenus {
     Curriculo curriculoCandidato = new Curriculo();
     private List<Vaga> listaDeVagas = GerenciadorDeListas.getListaDeVagas();
     // private List<Candidatura> listaDeCandidaturas = GerenciadorDeListas.getListaDeCandidaturas();
@@ -16,10 +16,10 @@ public class Candidato {
     public Candidato() {
         atalhos.escreverMensagem("Olá candidato(a)! Você deseja: \n");
         atalhos.pularLinha();
-        exibirMenuCandidato();
+        exibirMenu();
     }
 
-    public void exibirOpcoesMenuCandidato() {
+    public void exibirOpcoesMenu() {
         atalhos.linhaTracejada();
         atalhos.pularLinha();
 
@@ -33,7 +33,7 @@ public class Candidato {
         atalhos.pularLinha();
     }
 
-    public void validarOpcaoMenuCandidato() {
+    public void validarOpcaoMenu() {
         atalhos.escreverMensagem("Escolha uma opção: ");
         opcaoMenuCandidato = sc.nextInt();
 
@@ -46,7 +46,7 @@ public class Candidato {
                     criarCurriculo();
                 } else {
                     atalhos.escreverMensagem("Seu currículo já foi criado. \n");
-                    exibirMenuCandidato();
+                    exibirMenu();
                 }
                 break;
             case 2:
@@ -66,21 +66,21 @@ public class Candidato {
                 break;
             default:
                 atalhos.escreverMensagem("Valor inválido! Tente novamente. \n");
-                exibirMenuCandidato();
+                exibirMenu();
                 break;
         }
     }
 
-    public void exibirMenuCandidato() {
-        exibirOpcoesMenuCandidato();
-        validarOpcaoMenuCandidato();
+    public void exibirMenu() {
+        exibirOpcoesMenu();
+        validarOpcaoMenu();
     }
 
     public void criarCurriculo() {
         atalhos.escreverMensagem("Opção 1 | Criar currículo\n");
         curriculoCandidato.criar();
         isCurriculoCriado = true;
-        exibirMenuCandidato();
+        exibirMenu();
     }
 
     public void visualizarCurriculo() {
@@ -91,7 +91,7 @@ public class Candidato {
             atalhos.escreverMensagem("Seu currículo ainda não foi criado. \n");
         }
 
-        exibirMenuCandidato();
+        exibirMenu();
     }
 
     public void atualizarCurriculo() {
@@ -103,7 +103,7 @@ public class Candidato {
             atalhos.escreverMensagem("Seu currículo ainda não foi criado. \n");
         }
 
-        exibirMenuCandidato();
+        exibirMenu();
 
     }
 
@@ -123,11 +123,11 @@ public class Candidato {
         //     // adcionar uma nova candidatura a listaDeCandidaturas
         // }
 
-        exibirMenuCandidato();
+        exibirMenu();
     }
 
     public void listarCandidaturas() {
         atalhos.escreverMensagem("listarCandidaturas... \n");
-        exibirMenuCandidato();
+        exibirMenu();
     }
 }
