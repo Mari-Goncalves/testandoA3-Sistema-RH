@@ -23,7 +23,8 @@ public class Recrutador implements IMenus {
         atalhos.escreverMensagem("1-Criar vaga\n");
         atalhos.escreverMensagem("2-Visualizar vagas\n");
         atalhos.escreverMensagem("3-Atualizar vagas\n");
-        atalhos.escreverMensagem("4-Voltar ao menu inicial\n");
+        atalhos.escreverMensagem("4-Deletar vagas\n");
+        atalhos.escreverMensagem("5-Voltar ao menu inicial\n");
 
         atalhos.pularLinha();
     }
@@ -31,7 +32,7 @@ public class Recrutador implements IMenus {
     public void validarOpcaoMenu() {
         atalhos.escreverMensagem("Escolha uma opção: ");
         opcaoMenuRecrutador = sc.nextInt();
-        sc.nextLine(); // Consome a nova linha deixada pelo nextInt()
+        sc.nextLine(); 
 
         atalhos.pularLinha();
         atalhos.linhaTracejada();
@@ -68,6 +69,16 @@ public class Recrutador implements IMenus {
                 break;
 
             case 4:
+                atalhos.escreverMensagem("Opção 4 | Deletar vaga\n");
+                if (listaDeVagas.isEmpty()) {
+                    atalhos.escreverMensagem("Não há vagas criadas no momento. \n");
+                } else {
+                    deletarVaga();
+                }
+                exibirMenu();
+                break;
+
+            case 5:
                 atalhos.iniciar();
                 break;
 
@@ -81,11 +92,25 @@ public class Recrutador implements IMenus {
     public void atualizarVaga() {
         atalhos.escreverMensagem("Digite o ID da vaga que deseja atualizar: ");
         int idVaga = sc.nextInt();
-        sc.nextLine(); // Consome a nova linha deixada pelo nextInt()
+        sc.nextLine(); 
 
         for (Vaga vaga : listaDeVagas) {
             if (vaga.getId() == idVaga) {
                 vaga.atualizar();
+                return;
+            }
+        }
+        atalhos.escreverMensagem("Vaga com ID " + idVaga + " não encontrada. \n");
+    }
+
+    public void deletarVaga() {
+        atalhos.escreverMensagem("Digite o ID da vaga que deseja deletar: ");
+        int idVaga = sc.nextInt();
+        sc.nextLine(); 
+
+        for (Vaga vaga : listaDeVagas) {
+            if (vaga.getId() == idVaga) {
+                listaDeVagas.remove(vaga);
                 return;
             }
         }
