@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Vaga implements Cadastro {
+public class Vaga extends Cadastro {
     private static int contadorId = 1; // Contador para gerar IDs únicos
     private int id;
     private String titulo;

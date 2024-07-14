@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Curriculo implements Cadastro {
+public class Curriculo extends Cadastro {
     private String formacao;
     private String nivelEscolaridade;
     private String objetivos;
