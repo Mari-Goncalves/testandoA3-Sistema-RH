@@ -29,6 +29,7 @@ public class Candidato {
         atalhos.EscreverMensagem("3-Atualizar currículo\n");
         atalhos.EscreverMensagem("4-Ver vagas disponiveis\n");
         atalhos.EscreverMensagem("5-Listar candidaturas\n");
+        atalhos.EscreverMensagem("6-Voltar ao menu inicial\n");
 
         atalhos.PularLinha();
     }
@@ -60,6 +61,9 @@ public class Candidato {
                 break;
             case 5:
                 ListarCandidaturas();
+                break;
+            case 6:
+                atalhos.Iniciar();
                 break;
             default:
                 atalhos.EscreverMensagem("Valor inválido! Tente novamente. \n");

@@ -24,6 +24,7 @@ public class Recrutador {
         atalhos.EscreverMensagem("1-Criar vaga\n");
         atalhos.EscreverMensagem("2-Visualizar vagas\n");
         atalhos.EscreverMensagem("3-Atualizar vagas\n");
+        atalhos.EscreverMensagem("4-Voltar ao menu inicial\n");
 
         atalhos.PularLinha();
     }
@@ -65,6 +66,10 @@ public class Recrutador {
                     AtualizarVaga();
                 }
                 ExibirMenuRecrutador();
+                break;
+
+            case 4:
+                atalhos.Iniciar();
                 break;
 
             default:
