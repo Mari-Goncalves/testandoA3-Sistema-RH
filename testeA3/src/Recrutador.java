@@ -2,9 +2,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Recrutador implements IMenus {
-    private String cargo;
-    private String empresa;
-    private List<Vaga> listaDeVagas = GerenciadorDeListas.getListaDeVagas();
+    private List<Vaga> listaDeVagas = GerenciadorDeVagas.getListaDeVagas();
 
     Scanner sc = new Scanner(System.in);
     Atalhos atalhos = new Atalhos();
@@ -42,7 +40,7 @@ public class Recrutador implements IMenus {
                 atalhos.escreverMensagem("Opção 1 | Criar vaga\n");
                 Vaga novaVaga = new Vaga();
                 novaVaga.criar();
-                GerenciadorDeListas.adicionarVaga(novaVaga); // Adiciona a nova vaga ao GerenciadorDeListas
+                GerenciadorDeVagas.adicionarVaga(novaVaga);
                 exibirMenu();
                 break;
 

@@ -25,6 +25,10 @@ public class Vaga extends Cadastro {
         return id;
     }
 
+    public String getTitulo() {
+        return titulo;
+    }
+
     public void criar() {
         atalhos.linhaTracejada();
 
