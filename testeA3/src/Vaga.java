@@ -25,115 +25,115 @@ public class Vaga extends Cadastro {
     }
 
     public void Criar() {
-        atalhos.LinhaTracejada();
+        atalhos.linhaTracejada();
 
-        atalhos.EscreverMensagem("Título: ");
+        atalhos.escreverMensagem("Título: ");
         this.titulo = sc.nextLine();
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Requisitos: ");
+        atalhos.escreverMensagem("Requisitos: ");
         this.requisito = sc.nextLine();
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Salário: ");
+        atalhos.escreverMensagem("Salário: ");
         this.salario = sc.nextLine();
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Carga horaria: ");
+        atalhos.escreverMensagem("Carga horaria: ");
         this.cargaHoraria = sc.nextLine();
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Tipo de contrato: ");
+        atalhos.escreverMensagem("Tipo de contrato: ");
         this.tipoContrato = sc.nextLine();
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Modalidade: ");
+        atalhos.escreverMensagem("Modalidade: ");
         this.modalidade = sc.nextLine();
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Empresa: ");
+        atalhos.escreverMensagem("Empresa: ");
         this.empresa = sc.nextLine();
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Recrutador responsável: ");
+        atalhos.escreverMensagem("Recrutador responsável: ");
         this.recrutador = sc.nextLine();
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Status da vaga (aberta, em andamento ou fechada): ");
+        atalhos.escreverMensagem("Status da vaga (aberta, em andamento ou fechada): ");
         this.estadoVaga = sc.nextLine();
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Vaga criada com sucesso! \n");
-        atalhos.LinhaTracejada();
+        atalhos.escreverMensagem("Vaga criada com sucesso! \n");
+        atalhos.linhaTracejada();
     }
 
     public void Visualizar() {
-        atalhos.LinhaTracejada();
+        atalhos.linhaTracejada();
 
         System.out.printf("ID: %d \n", id);
-        atalhos.PularLinha();
+        atalhos.pularLinha();
         System.out.printf("Título: %s \n", titulo);
-        atalhos.PularLinha();
+        atalhos.pularLinha();
         System.out.printf("Requisito: %s \n", requisito);
-        atalhos.PularLinha();
+        atalhos.pularLinha();
         System.out.printf("Salário: %s \n", salario);
-        atalhos.PularLinha();
+        atalhos.pularLinha();
         System.out.printf("Carga horaria: %s \n", cargaHoraria);
-        atalhos.PularLinha();
+        atalhos.pularLinha();
         System.out.printf("Tipo de contrato: %s \n", tipoContrato);
-        atalhos.PularLinha();
+        atalhos.pularLinha();
         System.out.printf("Modalidade: %s \n", modalidade);
-        atalhos.PularLinha();
+        atalhos.pularLinha();
         System.out.printf("Empresa: %s \n", empresa);
-        atalhos.PularLinha();
+        atalhos.pularLinha();
         System.out.printf("Recrutador: %s \n", recrutador);
-        atalhos.PularLinha();
+        atalhos.pularLinha();
         System.out.printf("Estado da vaga: %s \n", estadoVaga);
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
-        atalhos.LinhaTracejada();
+        atalhos.linhaTracejada();
     }
 
     public void Atualizar() {
-        atalhos.LinhaTracejada();
+        atalhos.linhaTracejada();
 
-        atalhos.EscreverMensagem("Título (" + this.titulo + "): ");
+        atalhos.escreverMensagem("Título (" + this.titulo + "): ");
         this.titulo = sc.nextLine();
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Requisitos (" + this.requisito + "): ");
+        atalhos.escreverMensagem("Requisitos (" + this.requisito + "): ");
         this.requisito = sc.nextLine();
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Salário (" + this.salario + "): ");
+        atalhos.escreverMensagem("Salário (" + this.salario + "): ");
         this.salario = sc.nextLine();
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Carga horaria (" + this.cargaHoraria + "): ");
+        atalhos.escreverMensagem("Carga horaria (" + this.cargaHoraria + "): ");
         this.cargaHoraria = sc.nextLine();
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Tipo de contrato (" + this.tipoContrato + "): ");
+        atalhos.escreverMensagem("Tipo de contrato (" + this.tipoContrato + "): ");
         this.tipoContrato = sc.nextLine();
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Modalidade (" + this.modalidade + "): ");
+        atalhos.escreverMensagem("Modalidade (" + this.modalidade + "): ");
         this.modalidade = sc.nextLine();
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Empresa (" + this.empresa + "): ");
+        atalhos.escreverMensagem("Empresa (" + this.empresa + "): ");
         this.empresa = sc.nextLine();
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Recrutador responsável (" + this.recrutador + "): ");
+        atalhos.escreverMensagem("Recrutador responsável (" + this.recrutador + "): ");
         this.recrutador = sc.nextLine();
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Status da vaga (" + this.estadoVaga + "): ");
+        atalhos.escreverMensagem("Status da vaga (" + this.estadoVaga + "): ");
         this.estadoVaga = sc.nextLine();
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Vaga atualizada com sucesso! \n");
-        atalhos.LinhaTracejada();
+        atalhos.escreverMensagem("Vaga atualizada com sucesso! \n");
+        atalhos.linhaTracejada();
     }
 }

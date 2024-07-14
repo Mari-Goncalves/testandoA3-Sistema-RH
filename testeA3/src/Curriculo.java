@@ -12,40 +12,40 @@ public class Curriculo extends Cadastro {
     Scanner sc = new Scanner(System.in);
 
     public void Criar() {
-        atalhos.LinhaTracejada();
+        atalhos.linhaTracejada();
 
-        atalhos.EscreverMensagem("Nome: ");
+        atalhos.escreverMensagem("Nome: ");
         String nome = sc.nextLine();
 
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Formação: ");
+        atalhos.escreverMensagem("Formação: ");
         String formacaoCandidato = sc.nextLine();
 
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Nível de escolaridade: ");
+        atalhos.escreverMensagem("Nível de escolaridade: ");
         String nivelEscolaridadeCandidato = sc.nextLine();
 
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Objetivos: ");
+        atalhos.escreverMensagem("Objetivos: ");
         String objetivosCandidato = sc.nextLine();
 
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Habilidades: ");
+        atalhos.escreverMensagem("Habilidades: ");
         String habilidadesCandidato = sc.nextLine();
 
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Experiências: ");
+        atalhos.escreverMensagem("Experiências: ");
         String experienciasCandidato = sc.nextLine();
 
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Curriculo criado com sucesso! \n");
-        atalhos.LinhaTracejada();
+        atalhos.escreverMensagem("Curriculo criado com sucesso! \n");
+        atalhos.linhaTracejada();
 
         this.formacao = formacaoCandidato;
         this.nivelEscolaridade = nivelEscolaridadeCandidato;
@@ -56,70 +56,70 @@ public class Curriculo extends Cadastro {
     }
 
     public void Visualizar() {
-        atalhos.LinhaTracejada();
+        atalhos.linhaTracejada();
 
         System.out.printf("Nome: %s \n", nome);
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
         System.out.printf("Formação: %s \n", formacao);
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
         System.out.printf("Nível de escolaridade: %s \n", nivelEscolaridade);
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
         System.out.printf("Objetivos: %s \n", objetivos);
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
         System.out.printf("Habilidades: %s \n", habilidades);
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
         System.out.printf("Experiências: %s \n", experiencias);
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
-        atalhos.LinhaTracejada();
+        atalhos.linhaTracejada();
     }
 
     public void Atualizar(){
-        atalhos.LinhaTracejada();
+        atalhos.linhaTracejada();
 
-        atalhos.EscreverMensagem("Nome: ");
+        atalhos.escreverMensagem("Nome: ");
         String nome = sc.nextLine();
         setNome(nome);
 
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Formação: ");
+        atalhos.escreverMensagem("Formação: ");
         String formacaoCandidato = sc.nextLine();
         setFormacao(formacaoCandidato);
 
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Nível de escolaridade: ");
+        atalhos.escreverMensagem("Nível de escolaridade: ");
         String nivelEscolaridadeCandidato = sc.nextLine();
         setNivelEscolaridade(nivelEscolaridadeCandidato);
 
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Objetivos: ");
+        atalhos.escreverMensagem("Objetivos: ");
         String objetivosCandidato = sc.nextLine();
         setObjetivos(objetivosCandidato);
 
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Habilidades: ");
+        atalhos.escreverMensagem("Habilidades: ");
         String habilidadesCandidato = sc.nextLine();
         setHabilidades(habilidadesCandidato);
 
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Experiências: ");
+        atalhos.escreverMensagem("Experiências: ");
         String experienciasCandidato = sc.nextLine();
         setExperiencias(experienciasCandidato);
 
-        atalhos.PularLinha();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Curriculo atualizado com sucesso! \n");
-        atalhos.LinhaTracejada();
+        atalhos.escreverMensagem("Curriculo atualizado com sucesso! \n");
+        atalhos.linhaTracejada();
 
         this.formacao = formacaoCandidato;
         this.nivelEscolaridade = nivelEscolaridadeCandidato;

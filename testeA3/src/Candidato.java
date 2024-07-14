@@ -14,38 +14,38 @@ public class Candidato {
 
     // Método construtor - 1º método chamado após a classe ser instanciada.
     public Candidato() {
-        atalhos.EscreverMensagem("Olá candidato(a)! Você deseja: \n");
-        atalhos.PularLinha();
+        atalhos.escreverMensagem("Olá candidato(a)! Você deseja: \n");
+        atalhos.pularLinha();
         ExibirMenuCandidato();
     }
 
     public void ExibirOpcoesMenuCandidato() {
-        atalhos.LinhaTracejada();
-        atalhos.PularLinha();
+        atalhos.linhaTracejada();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("1-Criar currículo\n");
-        atalhos.EscreverMensagem("2-Visualiar currículo\n");
-        atalhos.EscreverMensagem("3-Atualizar currículo\n");
-        atalhos.EscreverMensagem("4-Ver vagas disponiveis\n");
-        atalhos.EscreverMensagem("5-Listar candidaturas\n");
-        atalhos.EscreverMensagem("6-Voltar ao menu inicial\n");
+        atalhos.escreverMensagem("1-Criar currículo\n");
+        atalhos.escreverMensagem("2-Visualiar currículo\n");
+        atalhos.escreverMensagem("3-Atualizar currículo\n");
+        atalhos.escreverMensagem("4-Ver vagas disponiveis\n");
+        atalhos.escreverMensagem("5-Listar candidaturas\n");
+        atalhos.escreverMensagem("6-Voltar ao menu inicial\n");
 
-        atalhos.PularLinha();
+        atalhos.pularLinha();
     }
 
     public void ValidarOpcaoMenuCandidato() {
-        atalhos.EscreverMensagem("Escolha uma opção: ");
+        atalhos.escreverMensagem("Escolha uma opção: ");
         opcaoMenuCandidato = sc.nextInt();
 
-        atalhos.PularLinha();
-        atalhos.LinhaTracejada();
+        atalhos.pularLinha();
+        atalhos.linhaTracejada();
 
         switch (opcaoMenuCandidato) {
             case 1:
                 if (!isCurriculoCriado) {
                     CriarCurriculo();
                 } else {
-                    atalhos.EscreverMensagem("Seu currículo já foi criado. \n");
+                    atalhos.escreverMensagem("Seu currículo já foi criado. \n");
                     ExibirMenuCandidato();
                 }
                 break;
@@ -62,10 +62,10 @@ public class Candidato {
                 ListarCandidaturas();
                 break;
             case 6:
-                atalhos.Iniciar();
+                atalhos.iniciar();
                 break;
             default:
-                atalhos.EscreverMensagem("Valor inválido! Tente novamente. \n");
+                atalhos.escreverMensagem("Valor inválido! Tente novamente. \n");
                 ExibirMenuCandidato();
                 break;
         }
@@ -77,7 +77,7 @@ public class Candidato {
     }
 
     public void CriarCurriculo() {
-        atalhos.EscreverMensagem("Opção 1 | Criar currículo\n");
+        atalhos.escreverMensagem("Opção 1 | Criar currículo\n");
         curriculoCandidato.Criar();
         isCurriculoCriado = true;
         ExibirMenuCandidato();
@@ -85,10 +85,10 @@ public class Candidato {
 
     public void VisualizarCurriculo() {
         if (isCurriculoCriado) {
-            atalhos.EscreverMensagem("Opção 2 | Visualizar currículo\n");
+            atalhos.escreverMensagem("Opção 2 | Visualizar currículo\n");
             curriculoCandidato.Visualizar();
         } else {
-            atalhos.EscreverMensagem("Seu currículo ainda não foi criado. \n");
+            atalhos.escreverMensagem("Seu currículo ainda não foi criado. \n");
         }
 
         ExibirMenuCandidato();
@@ -96,11 +96,11 @@ public class Candidato {
 
     public void AtualizarCurriculo() {
         if (isCurriculoCriado) {
-            atalhos.EscreverMensagem("Opção 3 | Atualizar currículo\n");
+            atalhos.escreverMensagem("Opção 3 | Atualizar currículo\n");
             curriculoCandidato.Atualizar();
 
         } else {
-            atalhos.EscreverMensagem("Seu currículo ainda não foi criado. \n");
+            atalhos.escreverMensagem("Seu currículo ainda não foi criado. \n");
         }
 
         ExibirMenuCandidato();
@@ -108,16 +108,16 @@ public class Candidato {
     }
 
     public void ListarVagasDisponiveis() {
-        atalhos.EscreverMensagem("Opção 4 | Ver vagas disponiveis\n");
+        atalhos.escreverMensagem("Opção 4 | Ver vagas disponiveis\n");
         if (listaDeVagas.isEmpty()) {
-            atalhos.EscreverMensagem("Não há vagas disponíveis no momento. \n");
+            atalhos.escreverMensagem("Não há vagas disponíveis no momento. \n");
         } else {
             for (Vaga vaga : listaDeVagas) {
                 vaga.Visualizar();
             }
         }
 
-        // atalhos.EscreverMensagem("Você deseja se candidatar a esta vaga? (1-SIM ou 2-NAO): ");
+        // atalhos.escreverMensagem("Você deseja se candidatar a esta vaga? (1-SIM ou 2-NAO): ");
         // int opcaoCandidatarVaga = sc.nextInt();
         // if(opcaoCandidatarVaga == 1){
         //     // adcionar uma nova candidatura a listaDeCandidaturas
@@ -127,7 +127,7 @@ public class Candidato {
     }
 
     public void ListarCandidaturas() {
-        atalhos.EscreverMensagem("ListarCandidaturas... \n");
+        atalhos.escreverMensagem("ListarCandidaturas... \n");
         ExibirMenuCandidato();
     }
 }
