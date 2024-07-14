@@ -1,11 +1,11 @@
+import java.util.List;
 import java.util.Scanner;
 
 public class Candidato {
     private String endereco;
     private String cpf;
     Curriculo curriculoCandidato = new Curriculo();
-    // *Como puxar enum?*
-    // -ArrayList<Vagas>: Vaga
+    private List<Vaga> listaDeVagas = GerenciadorDeVagas.getListaDeVagas();
 
     Scanner sc = new Scanner(System.in);
     boolean isCurriculoCriado = false;
@@ -13,14 +13,14 @@ public class Candidato {
     int opcaoMenuCandidato;
     String atualizarExperiencia;
 
-    // Método construtor - 1º método chamado após a classe ser intanciada.
+    // Método construtor - 1º método chamado após a classe ser instanciada.
     public Candidato() {
         atalhos.EscreverMensagem("Olá candidato(a)! Você deseja: \n");
         atalhos.PularLinha();
         ExibirMenuCandidato();
     }
 
-    public void ExibirOpcoesMenuCandidato(){
+    public void ExibirOpcoesMenuCandidato() {
         atalhos.LinhaTracejada();
         atalhos.PularLinha();
 
@@ -34,7 +34,7 @@ public class Candidato {
         atalhos.PularLinha();
     }
 
-    public void ValidarOpcaoMenuCandidato(){
+    public void ValidarOpcaoMenuCandidato() {
         atalhos.EscreverMensagem("Escolha uma opção: ");
         opcaoMenuCandidato = sc.nextInt();
 
@@ -91,7 +91,7 @@ public class Candidato {
         } else {
             atalhos.EscreverMensagem("Seu currículo ainda não foi criado. \n");
         }
-        
+
         ExibirMenuCandidato();
     }
 
@@ -105,14 +105,21 @@ public class Candidato {
         }
 
         ExibirMenuCandidato();
-        
+
     }
 
     public void ListarVagasDisponiveis() {
-        atalhos.EscreverMensagem("ListarVagasDisponiveis... \n");
+        atalhos.EscreverMensagem("Opção 4 | Ver vagas disponiveis\n");
+        if (listaDeVagas.isEmpty()) {
+            atalhos.EscreverMensagem("Não há vagas disponíveis no momento. \n");
+        } else {
+            for (Vaga vaga : listaDeVagas) {
+                vaga.VisualizarVaga();
+            }
+        }
         ExibirMenuCandidato();
     }
-    
+
     public void ListarCandidaturas() {
         atalhos.EscreverMensagem("ListarCandidaturas... \n");
         ExibirMenuCandidato();

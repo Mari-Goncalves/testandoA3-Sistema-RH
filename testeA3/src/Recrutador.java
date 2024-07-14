@@ -1,11 +1,10 @@
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Recrutador {
     private String cargo;
     private String empresa;
-    private List<Vaga> listaDeVagas = new ArrayList<>(); // Lista para armazenar as vagas criadas
+    private List<Vaga> listaDeVagas = GerenciadorDeVagas.getListaDeVagas();
 
     Scanner sc = new Scanner(System.in);
     Atalhos atalhos = new Atalhos();
@@ -42,7 +41,7 @@ public class Recrutador {
                 atalhos.EscreverMensagem("Opção 1 | Criar vaga\n");
                 Vaga novaVaga = new Vaga();
                 novaVaga.CriarVaga();
-                listaDeVagas.add(novaVaga); // Adiciona a nova vaga à lista
+                GerenciadorDeVagas.adicionarVaga(novaVaga); // Adiciona a nova vaga ao GerenciadorDeVagas
                 ExibirMenuRecrutador();
                 break;
 
