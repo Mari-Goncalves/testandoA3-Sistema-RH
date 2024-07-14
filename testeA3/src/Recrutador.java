@@ -1,118 +1,99 @@
+import java.util.List;
 import java.util.Scanner;
 
-public class Recrutador {
+public class Recrutador implements IMenus {
     private String cargo;
     private String empresa;
-    private Vaga vaga = new Vaga(); 
+    private List<Vaga> listaDeVagas = GerenciadorDeListas.getListaDeVagas();
 
     Scanner sc = new Scanner(System.in);
-    boolean isVagaCriada = false;
     Atalhos atalhos = new Atalhos();
     int opcaoMenuRecrutador;
-    String atualizarExperiencia;
 
     public Recrutador() {
-        atalhos.EscreverMensagem("Olá recrutador(a)! Você deseja: \n");
-        atalhos.PularLinha();
-        ExibirMenuRecrutador();
+        atalhos.escreverMensagem("Olá recrutador(a)! Você deseja: \n");
+        atalhos.pularLinha();
+        exibirMenu();
     }
 
-    public void ExibirOpcoesMenuRecrutador(){
-        atalhos.LinhaTracejada();
-        atalhos.PularLinha();
+    public void exibirOpcoesMenu() {
+        atalhos.linhaTracejada();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("1-Criar vaga\n");
-        atalhos.EscreverMensagem("2-Visualizar vagas\n");
-        atalhos.EscreverMensagem("3-Atualizar vagas\n");
+        atalhos.escreverMensagem("1-Criar vaga\n");
+        atalhos.escreverMensagem("2-Visualizar vagas\n");
+        atalhos.escreverMensagem("3-Atualizar vagas\n");
+        atalhos.escreverMensagem("4-Voltar ao menu inicial\n");
 
-        atalhos.PularLinha();
+        atalhos.pularLinha();
     }
 
-    public void ValidarOpcaoMenurRecrutador(){
-        atalhos.EscreverMensagem("Escolha uma opção: ");
+    public void validarOpcaoMenu() {
+        atalhos.escreverMensagem("Escolha uma opção: ");
         opcaoMenuRecrutador = sc.nextInt();
+        sc.nextLine(); // Consome a nova linha deixada pelo nextInt()
 
-        atalhos.PularLinha();
-        atalhos.LinhaTracejada();
+        atalhos.pularLinha();
+        atalhos.linhaTracejada();
 
         switch (opcaoMenuRecrutador) {
             case 1:
-                atalhos.EscreverMensagem("Opção 1 | Criar vaga\n");
-                vaga.CriarVaga();
-                isVagaCriada = true;
-                ExibirMenuRecrutador();
+                atalhos.escreverMensagem("Opção 1 | Criar vaga\n");
+                Vaga novaVaga = new Vaga();
+                novaVaga.criar();
+                GerenciadorDeListas.adicionarVaga(novaVaga); // Adiciona a nova vaga ao GerenciadorDeListas
+                exibirMenu();
                 break;
 
             case 2:
-                atalhos.EscreverMensagem("Opção 2 | Visualizar vaga\n");
-                if(isVagaCriada){
-                    vaga.VisualizarVaga();
+                atalhos.escreverMensagem("Opção 2 | Visualizar vagas\n");
+                if (listaDeVagas.isEmpty()) {
+                    atalhos.escreverMensagem("Não há vagas criadas no momento. \n");
                 } else {
-                    atalhos.EscreverMensagem("Não há vagas criadas no momento. \n");
+                    for (Vaga vaga : listaDeVagas) {
+                        vaga.visualizar();
+                    }
                 }
-                ExibirMenuRecrutador();
+                exibirMenu();
                 break;
 
             case 3:
-                atalhos.EscreverMensagem("Opção 3 | Atualizar vaga\n");
-                if (isVagaCriada) {
-                    vaga.AtualizarVaga();
+                atalhos.escreverMensagem("Opção 3 | Atualizar vaga\n");
+                if (listaDeVagas.isEmpty()) {
+                    atalhos.escreverMensagem("Não há vagas criadas no momento. \n");
                 } else {
-                    atalhos.EscreverMensagem("Não há vagas criadas no momento. \n");
+                    atualizarVaga();
                 }
-                ExibirMenuRecrutador();
+                exibirMenu();
+                break;
 
+            case 4:
+                atalhos.iniciar();
                 break;
 
             default:
-                atalhos.EscreverMensagem("Valor inválido! Tente novamente. \n");
-                ExibirMenuRecrutador();
+                atalhos.escreverMensagem("Valor inválido! Tente novamente. \n");
+                exibirMenu();
                 break;
         }
     }
 
-    public void ExibirMenuRecrutador() {
-        ExibirOpcoesMenuRecrutador();
-        ValidarOpcaoMenurRecrutador();
+    public void atualizarVaga() {
+        atalhos.escreverMensagem("Digite o ID da vaga que deseja atualizar: ");
+        int idVaga = sc.nextInt();
+        sc.nextLine(); // Consome a nova linha deixada pelo nextInt()
+
+        for (Vaga vaga : listaDeVagas) {
+            if (vaga.getId() == idVaga) {
+                vaga.atualizar();
+                return;
+            }
+        }
+        atalhos.escreverMensagem("Vaga com ID " + idVaga + " não encontrada. \n");
     }
 
-    // public String getCargo() {
-    //     return cargo;
-    // }
-
-    // public void setCargo(String cargo) {
-    //     this.cargo = cargo;
-    // }
-
-    // public String getEmpresa() {
-    //     return empresa;
-    // }
-
-    // public void setEmpresa(String empresa) {
-    //     this.empresa = empresa;
-    // }
-
-    // public void SelecionarCandidato(){
-
-    // }
-    // public void ExcluirCandidato(){
-
-    // }
-    // public void ListarCandidaturas(){
-
-    // }
-    // public void EditarStatusCandidatura(){
-
-    // }
-    // public void EditarVaga(){
-
-    // }
-    // public void ListarVagas(){
-
-    // }
-    // public void CadastrarEmpresa(){
-
-    // }
-    // public void AgendarEntrevista(){
-
+    public void exibirMenu() {
+        exibirOpcoesMenu();
+        validarOpcaoMenu();
     }
+}

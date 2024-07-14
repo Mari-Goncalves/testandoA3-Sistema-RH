@@ -1,191 +1,139 @@
 import java.util.Scanner;
 
-public class Vaga {
+public class Vaga extends Cadastro {
+    private static int contadorId = 1; // Contador para gerar IDs únicos
+    private int id;
     private String titulo;
     private String requisito;
     private String salario;
     private String cargaHoraria;
     private String tipoContrato;
     private String modalidade;
-    private String empresa; 
-    private String recrutador; 
-    private String estadoVaga; 
+    private String empresa;
+    private String recrutador;
+    private String estadoVaga;
 
     Atalhos atalhos = new Atalhos();
     Scanner sc = new Scanner(System.in);
 
-    public void CriarVaga(){
-        atalhos.LinhaTracejada();
-
-        atalhos.EscreverMensagem("Título: ");
-        String tituloVaga = sc.nextLine();
-
-        atalhos.PularLinha();
-        
-        atalhos.EscreverMensagem("Requisitos: ");
-        String requisitoVaga = sc.nextLine();
-
-        atalhos.PularLinha();
-
-        atalhos.EscreverMensagem("Salário: ");
-        String salarioVaga = sc.nextLine();
-
-        atalhos.PularLinha();
-
-        atalhos.EscreverMensagem("Carga horaria: ");
-        String cargaHorariaVaga = sc.nextLine();
-
-        atalhos.PularLinha();
-
-        atalhos.EscreverMensagem("Tipo de contrato: ");
-        String tipoContratoVaga = sc.nextLine();
-
-        atalhos.PularLinha();
-
-        atalhos.EscreverMensagem("Modalidade: ");
-        String modalidadeVaga = sc.nextLine();
-
-        atalhos.PularLinha();
-
-        atalhos.EscreverMensagem("Empresa: ");
-        String empresaVaga = sc.nextLine();
-
-        atalhos.PularLinha();
-
-        atalhos.EscreverMensagem("Recrutador responsável: ");
-        String recrutadorVaga = sc.nextLine();
-
-        atalhos.PularLinha();
-
-        atalhos.EscreverMensagem("Status da vaga (aberta, em andamento ou fechada): ");
-        String estadoVagaVaga = sc.nextLine();
-
-        atalhos.PularLinha();
-
-        atalhos.EscreverMensagem("Vaga criada com sucesso! \n");
-        atalhos.LinhaTracejada();
-        
-        this.titulo = tituloVaga;
-        this.requisito = requisitoVaga;
-        this.salario = salarioVaga;
-        this.cargaHoraria = cargaHorariaVaga;
-        this.tipoContrato = tipoContratoVaga;
-        this.modalidade = modalidadeVaga;
-        this.empresa = empresaVaga;
-        this.recrutador = recrutadorVaga;
-        this.estadoVaga = estadoVagaVaga;
+    public Vaga() {
+        this.id = contadorId++;
     }
 
-    public void VisualizarVaga(){
-        atalhos.LinhaTracejada();
+    public int getId() {
+        return id;
+    }
 
+    public void criar() {
+        atalhos.linhaTracejada();
+
+        atalhos.escreverMensagem("Título: ");
+        this.titulo = sc.nextLine();
+        atalhos.pularLinha();
+
+        atalhos.escreverMensagem("Requisitos: ");
+        this.requisito = sc.nextLine();
+        atalhos.pularLinha();
+
+        atalhos.escreverMensagem("Salário: ");
+        this.salario = sc.nextLine();
+        atalhos.pularLinha();
+
+        atalhos.escreverMensagem("Carga horaria: ");
+        this.cargaHoraria = sc.nextLine();
+        atalhos.pularLinha();
+
+        atalhos.escreverMensagem("Tipo de contrato: ");
+        this.tipoContrato = sc.nextLine();
+        atalhos.pularLinha();
+
+        atalhos.escreverMensagem("Modalidade: ");
+        this.modalidade = sc.nextLine();
+        atalhos.pularLinha();
+
+        atalhos.escreverMensagem("Empresa: ");
+        this.empresa = sc.nextLine();
+        atalhos.pularLinha();
+
+        atalhos.escreverMensagem("Recrutador responsável: ");
+        this.recrutador = sc.nextLine();
+        atalhos.pularLinha();
+
+        atalhos.escreverMensagem("Status da vaga (aberta, em andamento ou fechada): ");
+        this.estadoVaga = sc.nextLine();
+        atalhos.pularLinha();
+
+        atalhos.escreverMensagem("Vaga criada com sucesso! \n");
+        atalhos.linhaTracejada();
+    }
+
+    public void visualizar() {
+        atalhos.linhaTracejada();
+
+        System.out.printf("ID: %d \n", id);
+        atalhos.pularLinha();
         System.out.printf("Título: %s \n", titulo);
-        atalhos.PularLinha();
+        atalhos.pularLinha();
         System.out.printf("Requisito: %s \n", requisito);
-        atalhos.PularLinha();
+        atalhos.pularLinha();
         System.out.printf("Salário: %s \n", salario);
-        atalhos.PularLinha();
+        atalhos.pularLinha();
         System.out.printf("Carga horaria: %s \n", cargaHoraria);
-        atalhos.PularLinha();
+        atalhos.pularLinha();
         System.out.printf("Tipo de contrato: %s \n", tipoContrato);
-        atalhos.PularLinha();
+        atalhos.pularLinha();
         System.out.printf("Modalidade: %s \n", modalidade);
-        atalhos.PularLinha();
+        atalhos.pularLinha();
         System.out.printf("Empresa: %s \n", empresa);
-        atalhos.PularLinha();
+        atalhos.pularLinha();
         System.out.printf("Recrutador: %s \n", recrutador);
-        atalhos.PularLinha();
-        System.out.printf("Estado da vga: %s \n", estadoVaga);
-        atalhos.PularLinha();
+        atalhos.pularLinha();
+        System.out.printf("Estado da vaga: %s \n", estadoVaga);
+        atalhos.pularLinha();
 
-        atalhos.LinhaTracejada();
+        atalhos.linhaTracejada();
     }
 
-    public void AtualizarVaga(){
-        atalhos.LinhaTracejada();
+    public void atualizar() {
+        atalhos.linhaTracejada();
 
-        atalhos.EscreverMensagem("Título: ");
-        String titulo = sc.nextLine();
-        setTitulo(titulo);
-        atalhos.PularLinha();
+        atalhos.escreverMensagem("Título (" + this.titulo + "): ");
+        this.titulo = sc.nextLine();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Requisito: ");
-        String requisito = sc.nextLine();
-        setRequisito(requisito);
-        atalhos.PularLinha();
+        atalhos.escreverMensagem("Requisitos (" + this.requisito + "): ");
+        this.requisito = sc.nextLine();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Salário: ");
-        String salario = sc.nextLine();
-        setSalario(salario);
-        atalhos.PularLinha();
+        atalhos.escreverMensagem("Salário (" + this.salario + "): ");
+        this.salario = sc.nextLine();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Carga horaria: ");
-        String cargaHoraria = sc.nextLine();
-        setCargaHoraria(cargaHoraria);
-        atalhos.PularLinha();
+        atalhos.escreverMensagem("Carga horaria (" + this.cargaHoraria + "): ");
+        this.cargaHoraria = sc.nextLine();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Tipo de contrato: ");
-        String tipoContrato = sc.nextLine();
-        setTipoContrato(tipoContrato);
-        atalhos.PularLinha();
+        atalhos.escreverMensagem("Tipo de contrato (" + this.tipoContrato + "): ");
+        this.tipoContrato = sc.nextLine();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Modalidade: ");
-        String modalidade = sc.nextLine();
-        setModalidade(modalidade);
-        atalhos.PularLinha();
+        atalhos.escreverMensagem("Modalidade (" + this.modalidade + "): ");
+        this.modalidade = sc.nextLine();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Empresa: ");
-        String empresa = sc.nextLine();
-        setEmpresa(empresa);
-        atalhos.PularLinha();
+        atalhos.escreverMensagem("Empresa (" + this.empresa + "): ");
+        this.empresa = sc.nextLine();
+        atalhos.pularLinha();
 
-        atalhos.EscreverMensagem("Recrutador: ");
-        String recrutador = sc.nextLine();
-        setRecrutador(recrutador);
-        atalhos.PularLinha();
-        
-        atalhos.EscreverMensagem("Estado da vga: ");
-        String estadoVaga = sc.nextLine();
-        setEstadoVaga(estadoVaga);
+        atalhos.escreverMensagem("Recrutador responsável (" + this.recrutador + "): ");
+        this.recrutador = sc.nextLine();
+        atalhos.pularLinha();
 
-        atalhos.PularLinha();
+        atalhos.escreverMensagem("Status da vaga (" + this.estadoVaga + "): ");
+        this.estadoVaga = sc.nextLine();
+        atalhos.pularLinha();
 
-        this.titulo = titulo;
-        this.requisito = requisito;
-        this.salario = salario;
-        this.cargaHoraria = cargaHoraria;
-        this.tipoContrato = tipoContrato;
-        this.modalidade = modalidade;
-        this.empresa = empresa;
-        this.recrutador = recrutador;
-        this.estadoVaga = estadoVaga;
-    }
-
-    public void setTitulo(String titulo) {
-    this.titulo = titulo;
-    }
-    public void setRequisito(String requisito) {
-    this.requisito = requisito;
-    }
-    public void setSalario(String salario) {
-    this.salario = salario;
-    }
-    public void setCargaHoraria(String cargaHoraria) {
-    this.cargaHoraria = cargaHoraria;
-    }
-    public void setTipoContrato(String tipoContrato) {
-    this.tipoContrato = tipoContrato;
-    }
-    public void setModalidade(String modalidade) {
-    this.modalidade = modalidade;
-    }
-    public void setEmpresa(String empresa) {
-    this.empresa = empresa;
-    }
-    public void setRecrutador(String recrutador) {
-    this.recrutador = recrutador;
-    }
-    public void setEstadoVaga(String estadoVaga) {
-    this.estadoVaga = estadoVaga;
+        atalhos.escreverMensagem("Vaga atualizada com sucesso! \n");
+        atalhos.linhaTracejada();
     }
 }

@@ -1,6 +1,5 @@
 public class App {
-    public static void main(String[] args) throws Exception {
-   
-        Iniciador inicializador = new Iniciador();
+    public static void main(String[] args) {
+        Iniciador operador = new Iniciador();
     }
 }
