@@ -24,7 +24,7 @@ public class Candidato {
         atalhos.pularLinha();
 
         atalhos.escreverMensagem("1-Criar currículo\n");
-        atalhos.escreverMensagem("2-Visualiar currículo\n");
+        atalhos.escreverMensagem("2-Visualizar currículo\n");
         atalhos.escreverMensagem("3-Atualizar currículo\n");
         atalhos.escreverMensagem("4-Ver vagas disponiveis\n");
         atalhos.escreverMensagem("5-Listar candidaturas\n");

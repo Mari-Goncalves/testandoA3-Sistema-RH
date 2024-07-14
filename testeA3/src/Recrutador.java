@@ -16,7 +16,7 @@ public class Recrutador {
         ExibirMenuRecrutador();
     }
 
-    public void ExibirOpcoesMenuRecrutador() {
+    public void exibirOpcoesMenuRecrutador() {
         atalhos.linhaTracejada();
         atalhos.pularLinha();
 
@@ -28,7 +28,7 @@ public class Recrutador {
         atalhos.pularLinha();
     }
 
-    public void ValidarOpcaoMenuRecrutador() {
+    public void validarOpcaoMenuRecrutador() {
         atalhos.escreverMensagem("Escolha uma opção: ");
         opcaoMenuRecrutador = sc.nextInt();
         sc.nextLine(); // Consome a nova linha deixada pelo nextInt()
@@ -62,7 +62,7 @@ public class Recrutador {
                 if (listaDeVagas.isEmpty()) {
                     atalhos.escreverMensagem("Não há vagas criadas no momento. \n");
                 } else {
-                    AtualizarVaga();
+                    atualizarVaga();
                 }
                 ExibirMenuRecrutador();
                 break;
@@ -78,7 +78,7 @@ public class Recrutador {
         }
     }
 
-    public void AtualizarVaga() {
+    public void atualizarVaga() {
         atalhos.escreverMensagem("Digite o ID da vaga que deseja atualizar: ");
         int idVaga = sc.nextInt();
         sc.nextLine(); // Consome a nova linha deixada pelo nextInt()
@@ -93,7 +93,7 @@ public class Recrutador {
     }
 
     public void ExibirMenuRecrutador() {
-        ExibirOpcoesMenuRecrutador();
-        ValidarOpcaoMenuRecrutador();
+        exibirOpcoesMenuRecrutador();
+        validarOpcaoMenuRecrutador();
     }
 }
