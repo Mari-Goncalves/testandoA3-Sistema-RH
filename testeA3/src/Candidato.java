@@ -16,10 +16,10 @@ public class Candidato {
     public Candidato() {
         atalhos.escreverMensagem("Olá candidato(a)! Você deseja: \n");
         atalhos.pularLinha();
-        ExibirMenuCandidato();
+        exibirMenuCandidato();
     }
 
-    public void ExibirOpcoesMenuCandidato() {
+    public void exibirOpcoesMenuCandidato() {
         atalhos.linhaTracejada();
         atalhos.pularLinha();
 
@@ -33,7 +33,7 @@ public class Candidato {
         atalhos.pularLinha();
     }
 
-    public void ValidarOpcaoMenuCandidato() {
+    public void validarOpcaoMenuCandidato() {
         atalhos.escreverMensagem("Escolha uma opção: ");
         opcaoMenuCandidato = sc.nextInt();
 
@@ -43,47 +43,47 @@ public class Candidato {
         switch (opcaoMenuCandidato) {
             case 1:
                 if (!isCurriculoCriado) {
-                    CriarCurriculo();
+                    criarCurriculo();
                 } else {
                     atalhos.escreverMensagem("Seu currículo já foi criado. \n");
-                    ExibirMenuCandidato();
+                    exibirMenuCandidato();
                 }
                 break;
             case 2:
-                VisualizarCurriculo();
+                visualizarCurriculo();
                 break;
             case 3:
-                AtualizarCurriculo();
+                atualizarCurriculo();
                 break;
             case 4:
-                ListarVagasDisponiveis();
+                listarVagasDisponiveis();
                 break;
             case 5:
-                ListarCandidaturas();
+                listarCandidaturas();
                 break;
             case 6:
                 atalhos.iniciar();
                 break;
             default:
                 atalhos.escreverMensagem("Valor inválido! Tente novamente. \n");
-                ExibirMenuCandidato();
+                exibirMenuCandidato();
                 break;
         }
     }
 
-    public void ExibirMenuCandidato() {
-        ExibirOpcoesMenuCandidato();
-        ValidarOpcaoMenuCandidato();
+    public void exibirMenuCandidato() {
+        exibirOpcoesMenuCandidato();
+        validarOpcaoMenuCandidato();
     }
 
-    public void CriarCurriculo() {
+    public void criarCurriculo() {
         atalhos.escreverMensagem("Opção 1 | Criar currículo\n");
         curriculoCandidato.criar();
         isCurriculoCriado = true;
-        ExibirMenuCandidato();
+        exibirMenuCandidato();
     }
 
-    public void VisualizarCurriculo() {
+    public void visualizarCurriculo() {
         if (isCurriculoCriado) {
             atalhos.escreverMensagem("Opção 2 | Visualizar currículo\n");
             curriculoCandidato.visualizar();
@@ -91,10 +91,10 @@ public class Candidato {
             atalhos.escreverMensagem("Seu currículo ainda não foi criado. \n");
         }
 
-        ExibirMenuCandidato();
+        exibirMenuCandidato();
     }
 
-    public void AtualizarCurriculo() {
+    public void atualizarCurriculo() {
         if (isCurriculoCriado) {
             atalhos.escreverMensagem("Opção 3 | Atualizar currículo\n");
             curriculoCandidato.atualizar();
@@ -103,11 +103,11 @@ public class Candidato {
             atalhos.escreverMensagem("Seu currículo ainda não foi criado. \n");
         }
 
-        ExibirMenuCandidato();
+        exibirMenuCandidato();
 
     }
 
-    public void ListarVagasDisponiveis() {
+    public void listarVagasDisponiveis() {
         atalhos.escreverMensagem("Opção 4 | Ver vagas disponiveis\n");
         if (listaDeVagas.isEmpty()) {
             atalhos.escreverMensagem("Não há vagas disponíveis no momento. \n");
@@ -123,11 +123,11 @@ public class Candidato {
         //     // adcionar uma nova candidatura a listaDeCandidaturas
         // }
 
-        ExibirMenuCandidato();
+        exibirMenuCandidato();
     }
 
-    public void ListarCandidaturas() {
-        atalhos.escreverMensagem("ListarCandidaturas... \n");
-        ExibirMenuCandidato();
+    public void listarCandidaturas() {
+        atalhos.escreverMensagem("listarCandidaturas... \n");
+        exibirMenuCandidato();
     }
 }
