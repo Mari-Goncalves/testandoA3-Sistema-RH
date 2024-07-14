@@ -7,6 +7,9 @@ public class Curriculo extends Cadastro {
     private String habilidades;
     private String experiencias;
     private String nome;
+    private String email;
+    private String telefone;
+    private String linkLinkedIn;
 
     Atalhos atalhos = new Atalhos();
     Scanner sc = new Scanner(System.in);
@@ -15,7 +18,22 @@ public class Curriculo extends Cadastro {
         atalhos.linhaTracejada();
 
         atalhos.escreverMensagem("Nome: ");
-        String nome = sc.nextLine();
+        String nomeCandidato = sc.nextLine();
+
+        atalhos.pularLinha();
+
+        atalhos.escreverMensagem("Email: ");
+        String emailCandidato = sc.nextLine();
+
+        atalhos.pularLinha();
+
+        atalhos.escreverMensagem("Telefone: ");
+        String telefoneCandidato = sc.nextLine();
+
+        atalhos.pularLinha();
+
+        atalhos.escreverMensagem("LinkedIn: ");
+        String linkLinkedInCandidato = sc.nextLine();
 
         atalhos.pularLinha();
 
@@ -52,13 +70,25 @@ public class Curriculo extends Cadastro {
         this.objetivos = objetivosCandidato;
         this.habilidades = habilidadesCandidato;
         this.experiencias = experienciasCandidato;
-        this.nome = nome;
+        this.nome = nomeCandidato;
+        this.email = emailCandidato;
+        this.telefone = telefoneCandidato;
+        this.linkLinkedIn = linkLinkedInCandidato;
     }
 
     public void visualizar() {
         atalhos.linhaTracejada();
 
         System.out.printf("Nome: %s \n", nome);
+        atalhos.pularLinha();
+
+        System.out.printf("Email: %s \n", email);
+        atalhos.pularLinha();
+
+        System.out.printf("Telefone: %s \n", telefone);
+        atalhos.pularLinha();
+        
+        System.out.printf("LinkedIn: %s \n", linkLinkedIn);
         atalhos.pularLinha();
 
         System.out.printf("Formação: %s \n", formacao);
@@ -85,6 +115,24 @@ public class Curriculo extends Cadastro {
         atalhos.escreverMensagem("Nome: ");
         String nome = sc.nextLine();
         setNome(nome);
+
+        atalhos.pularLinha();
+
+        atalhos.escreverMensagem("Email: ");
+        String email = sc.nextLine();
+        setNome(email);
+
+        atalhos.pularLinha();
+
+        atalhos.escreverMensagem("Telefone: ");
+        String telefone = sc.nextLine();
+        setNome(telefone);
+
+        atalhos.pularLinha();
+
+        atalhos.escreverMensagem("LinkedIn: ");
+        String linkLinkedIn = sc.nextLine();
+        setNome(linkLinkedIn);
 
         atalhos.pularLinha();
 
