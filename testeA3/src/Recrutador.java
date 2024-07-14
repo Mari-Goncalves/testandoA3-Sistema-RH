@@ -32,7 +32,7 @@ public class Recrutador implements IMenus {
     public void validarOpcaoMenu() {
         atalhos.escreverMensagem("Escolha uma opção: ");
         opcaoMenuRecrutador = sc.nextInt();
-        sc.nextLine(); // Consome a nova linha deixada pelo nextInt()
+        sc.nextLine(); 
 
         atalhos.pularLinha();
         atalhos.linhaTracejada();
@@ -92,7 +92,7 @@ public class Recrutador implements IMenus {
     public void atualizarVaga() {
         atalhos.escreverMensagem("Digite o ID da vaga que deseja atualizar: ");
         int idVaga = sc.nextInt();
-        sc.nextLine(); // Consome a nova linha deixada pelo nextInt()
+        sc.nextLine(); 
 
         for (Vaga vaga : listaDeVagas) {
             if (vaga.getId() == idVaga) {
@@ -106,7 +106,7 @@ public class Recrutador implements IMenus {
     public void deletarVaga() {
         atalhos.escreverMensagem("Digite o ID da vaga que deseja deletar: ");
         int idVaga = sc.nextInt();
-        sc.nextLine(); // Consome a nova linha deixada pelo nextInt()
+        sc.nextLine(); 
 
         for (Vaga vaga : listaDeVagas) {
             if (vaga.getId() == idVaga) {
