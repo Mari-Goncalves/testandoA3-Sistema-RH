@@ -11,7 +11,7 @@ public class Curriculo extends Cadastro {
     Atalhos atalhos = new Atalhos();
     Scanner sc = new Scanner(System.in);
 
-    public void Criar() {
+    public void criar() {
         atalhos.linhaTracejada();
 
         atalhos.escreverMensagem("Nome: ");
@@ -55,7 +55,7 @@ public class Curriculo extends Cadastro {
         this.nome = nome;
     }
 
-    public void Visualizar() {
+    public void visualizar() {
         atalhos.linhaTracejada();
 
         System.out.printf("Nome: %s \n", nome);
@@ -79,7 +79,7 @@ public class Curriculo extends Cadastro {
         atalhos.linhaTracejada();
     }
 
-    public void Atualizar(){
+    public void atualizar(){
         atalhos.linhaTracejada();
 
         atalhos.escreverMensagem("Nome: ");

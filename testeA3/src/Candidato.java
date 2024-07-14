@@ -78,7 +78,7 @@ public class Candidato {
 
     public void CriarCurriculo() {
         atalhos.escreverMensagem("Opção 1 | Criar currículo\n");
-        curriculoCandidato.Criar();
+        curriculoCandidato.criar();
         isCurriculoCriado = true;
         ExibirMenuCandidato();
     }
@@ -86,7 +86,7 @@ public class Candidato {
     public void VisualizarCurriculo() {
         if (isCurriculoCriado) {
             atalhos.escreverMensagem("Opção 2 | Visualizar currículo\n");
-            curriculoCandidato.Visualizar();
+            curriculoCandidato.visualizar();
         } else {
             atalhos.escreverMensagem("Seu currículo ainda não foi criado. \n");
         }
@@ -97,7 +97,7 @@ public class Candidato {
     public void AtualizarCurriculo() {
         if (isCurriculoCriado) {
             atalhos.escreverMensagem("Opção 3 | Atualizar currículo\n");
-            curriculoCandidato.Atualizar();
+            curriculoCandidato.atualizar();
 
         } else {
             atalhos.escreverMensagem("Seu currículo ainda não foi criado. \n");
@@ -113,7 +113,7 @@ public class Candidato {
             atalhos.escreverMensagem("Não há vagas disponíveis no momento. \n");
         } else {
             for (Vaga vaga : listaDeVagas) {
-                vaga.Visualizar();
+                vaga.visualizar();
             }
         }
 

@@ -40,7 +40,7 @@ public class Recrutador {
             case 1:
                 atalhos.escreverMensagem("Opção 1 | Criar vaga\n");
                 Vaga novaVaga = new Vaga();
-                novaVaga.Criar();
+                novaVaga.criar();
                 GerenciadorDeListas.adicionarVaga(novaVaga); // Adiciona a nova vaga ao GerenciadorDeListas
                 ExibirMenuRecrutador();
                 break;
@@ -51,7 +51,7 @@ public class Recrutador {
                     atalhos.escreverMensagem("Não há vagas criadas no momento. \n");
                 } else {
                     for (Vaga vaga : listaDeVagas) {
-                        vaga.Visualizar();
+                        vaga.visualizar();
                     }
                 }
                 ExibirMenuRecrutador();
@@ -85,7 +85,7 @@ public class Recrutador {
 
         for (Vaga vaga : listaDeVagas) {
             if (vaga.getId() == idVaga) {
-                vaga.Atualizar();
+                vaga.atualizar();
                 return;
             }
         }

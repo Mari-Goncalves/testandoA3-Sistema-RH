@@ -24,7 +24,7 @@ public class Vaga extends Cadastro {
         return id;
     }
 
-    public void Criar() {
+    public void criar() {
         atalhos.linhaTracejada();
 
         atalhos.escreverMensagem("Título: ");
@@ -67,7 +67,7 @@ public class Vaga extends Cadastro {
         atalhos.linhaTracejada();
     }
 
-    public void Visualizar() {
+    public void visualizar() {
         atalhos.linhaTracejada();
 
         System.out.printf("ID: %d \n", id);
@@ -94,7 +94,7 @@ public class Vaga extends Cadastro {
         atalhos.linhaTracejada();
     }
 
-    public void Atualizar() {
+    public void atualizar() {
         atalhos.linhaTracejada();
 
         atalhos.escreverMensagem("Título (" + this.titulo + "): ");

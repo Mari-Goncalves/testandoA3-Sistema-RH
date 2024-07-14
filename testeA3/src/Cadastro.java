@@ -1,5 +1,5 @@
 abstract class Cadastro {
-    abstract void Criar();
-    abstract void Visualizar();
-    abstract void Atualizar();
+    abstract void criar();
+    abstract void visualizar();
+    abstract void atualizar();
 }
