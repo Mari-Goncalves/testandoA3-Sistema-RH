@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Vaga {
+public class Vaga implements Cadastro {
     private static int contadorId = 1; // Contador para gerar IDs únicos
     private int id;
     private String titulo;
@@ -24,7 +24,7 @@ public class Vaga {
         return id;
     }
 
-    public void CriarVaga() {
+    public void Criar() {
         atalhos.LinhaTracejada();
 
         atalhos.EscreverMensagem("Título: ");
@@ -67,7 +67,7 @@ public class Vaga {
         atalhos.LinhaTracejada();
     }
 
-    public void VisualizarVaga() {
+    public void Visualizar() {
         atalhos.LinhaTracejada();
 
         System.out.printf("ID: %d \n", id);
@@ -94,7 +94,7 @@ public class Vaga {
         atalhos.LinhaTracejada();
     }
 
-    public void AtualizarVaga() {
+    public void Atualizar() {
         atalhos.LinhaTracejada();
 
         atalhos.EscreverMensagem("Título (" + this.titulo + "): ");

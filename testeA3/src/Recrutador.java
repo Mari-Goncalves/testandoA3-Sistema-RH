@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Recrutador {
     private String cargo;
     private String empresa;
-    private List<Vaga> listaDeVagas = GerenciadorDeVagas.getListaDeVagas();
+    private List<Vaga> listaDeVagas = GerenciadorDeListas.getListaDeVagas();
 
     Scanner sc = new Scanner(System.in);
     Atalhos atalhos = new Atalhos();
@@ -40,8 +40,8 @@ public class Recrutador {
             case 1:
                 atalhos.EscreverMensagem("Opção 1 | Criar vaga\n");
                 Vaga novaVaga = new Vaga();
-                novaVaga.CriarVaga();
-                GerenciadorDeVagas.adicionarVaga(novaVaga); // Adiciona a nova vaga ao GerenciadorDeVagas
+                novaVaga.Criar();
+                GerenciadorDeListas.adicionarVaga(novaVaga); // Adiciona a nova vaga ao GerenciadorDeListas
                 ExibirMenuRecrutador();
                 break;
 
@@ -51,7 +51,7 @@ public class Recrutador {
                     atalhos.EscreverMensagem("Não há vagas criadas no momento. \n");
                 } else {
                     for (Vaga vaga : listaDeVagas) {
-                        vaga.VisualizarVaga();
+                        vaga.Visualizar();
                     }
                 }
                 ExibirMenuRecrutador();
@@ -85,7 +85,7 @@ public class Recrutador {
 
         for (Vaga vaga : listaDeVagas) {
             if (vaga.getId() == idVaga) {
-                vaga.AtualizarVaga();
+                vaga.Atualizar();
                 return;
             }
         }

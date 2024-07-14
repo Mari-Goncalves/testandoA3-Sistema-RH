@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Curriculo {
+public class Curriculo implements Cadastro {
     private String formacao;
     private String nivelEscolaridade;
     private String objetivos;
@@ -11,7 +11,7 @@ public class Curriculo {
     Atalhos atalhos = new Atalhos();
     Scanner sc = new Scanner(System.in);
 
-    public void CriarCurriculo() {
+    public void Criar() {
         atalhos.LinhaTracejada();
 
         atalhos.EscreverMensagem("Nome: ");
@@ -55,7 +55,7 @@ public class Curriculo {
         this.nome = nome;
     }
 
-    public void VerResultadoCurriculo() {
+    public void Visualizar() {
         atalhos.LinhaTracejada();
 
         System.out.printf("Nome: %s \n", nome);
@@ -79,7 +79,7 @@ public class Curriculo {
         atalhos.LinhaTracejada();
     }
 
-    public void AtualizarCurriculo(){
+    public void Atualizar(){
         atalhos.LinhaTracejada();
 
         atalhos.EscreverMensagem("Nome: ");

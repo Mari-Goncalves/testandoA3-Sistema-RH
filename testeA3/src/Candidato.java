@@ -2,10 +2,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Candidato {
-    private String endereco;
-    private String cpf;
     Curriculo curriculoCandidato = new Curriculo();
-    private List<Vaga> listaDeVagas = GerenciadorDeVagas.getListaDeVagas();
+    private List<Vaga> listaDeVagas = GerenciadorDeListas.getListaDeVagas();
+    // private List<Candidatura> listaDeCandidaturas = GerenciadorDeListas.getListaDeCandidaturas();
 
     Scanner sc = new Scanner(System.in);
     boolean isCurriculoCriado = false;
@@ -79,7 +78,7 @@ public class Candidato {
 
     public void CriarCurriculo() {
         atalhos.EscreverMensagem("Opção 1 | Criar currículo\n");
-        curriculoCandidato.CriarCurriculo();
+        curriculoCandidato.Criar();
         isCurriculoCriado = true;
         ExibirMenuCandidato();
     }
@@ -87,7 +86,7 @@ public class Candidato {
     public void VisualizarCurriculo() {
         if (isCurriculoCriado) {
             atalhos.EscreverMensagem("Opção 2 | Visualizar currículo\n");
-            curriculoCandidato.VerResultadoCurriculo();
+            curriculoCandidato.Visualizar();
         } else {
             atalhos.EscreverMensagem("Seu currículo ainda não foi criado. \n");
         }
@@ -98,7 +97,7 @@ public class Candidato {
     public void AtualizarCurriculo() {
         if (isCurriculoCriado) {
             atalhos.EscreverMensagem("Opção 3 | Atualizar currículo\n");
-            curriculoCandidato.AtualizarCurriculo();
+            curriculoCandidato.Atualizar();
 
         } else {
             atalhos.EscreverMensagem("Seu currículo ainda não foi criado. \n");
@@ -114,9 +113,16 @@ public class Candidato {
             atalhos.EscreverMensagem("Não há vagas disponíveis no momento. \n");
         } else {
             for (Vaga vaga : listaDeVagas) {
-                vaga.VisualizarVaga();
+                vaga.Visualizar();
             }
         }
+
+        // atalhos.EscreverMensagem("Você deseja se candidatar a esta vaga? (1-SIM ou 2-NAO): ");
+        // int opcaoCandidatarVaga = sc.nextInt();
+        // if(opcaoCandidatarVaga == 1){
+        //     // adcionar uma nova candidatura a listaDeCandidaturas
+        // }
+
         ExibirMenuCandidato();
     }
 
