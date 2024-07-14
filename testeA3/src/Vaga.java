@@ -12,6 +12,7 @@ public class Vaga extends Cadastro {
     private String empresa;
     private String recrutador;
     private String estadoVaga;
+    private String localizacao;
 
     Atalhos atalhos = new Atalhos();
     Scanner sc = new Scanner(System.in);
@@ -51,6 +52,10 @@ public class Vaga extends Cadastro {
         this.modalidade = sc.nextLine();
         atalhos.pularLinha();
 
+        atalhos.escreverMensagem("Localizacao: ");
+        this.localizacao = sc.nextLine();
+        atalhos.pularLinha();
+
         atalhos.escreverMensagem("Empresa: ");
         this.empresa = sc.nextLine();
         atalhos.pularLinha();
@@ -83,6 +88,8 @@ public class Vaga extends Cadastro {
         System.out.printf("Tipo de contrato: %s \n", tipoContrato);
         atalhos.pularLinha();
         System.out.printf("Modalidade: %s \n", modalidade);
+        atalhos.pularLinha();
+        System.out.printf("Localizacao: %s \n", localizacao);
         atalhos.pularLinha();
         System.out.printf("Empresa: %s \n", empresa);
         atalhos.pularLinha();
@@ -119,6 +126,10 @@ public class Vaga extends Cadastro {
 
         atalhos.escreverMensagem("Modalidade (" + this.modalidade + "): ");
         this.modalidade = sc.nextLine();
+        atalhos.pularLinha();
+
+        atalhos.escreverMensagem("Localizacao (" + this.localizacao + "): ");
+        this.localizacao = sc.nextLine();
         atalhos.pularLinha();
 
         atalhos.escreverMensagem("Empresa (" + this.empresa + "): ");
