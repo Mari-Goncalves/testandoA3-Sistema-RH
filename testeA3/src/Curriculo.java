@@ -10,6 +10,7 @@ public class Curriculo extends Cadastro {
     private String email;
     private String telefone;
     private String linkLinkedIn;
+    private String endereco;
 
     Atalhos atalhos = new Atalhos();
     Scanner sc = new Scanner(System.in);
@@ -29,6 +30,11 @@ public class Curriculo extends Cadastro {
 
         atalhos.escreverMensagem("Telefone: ");
         String telefoneCandidato = sc.nextLine();
+
+        atalhos.pularLinha();
+
+        atalhos.escreverMensagem("Endereco: ");
+        String enderecoCandidato = sc.nextLine();
 
         atalhos.pularLinha();
 
@@ -73,6 +79,7 @@ public class Curriculo extends Cadastro {
         this.nome = nomeCandidato;
         this.email = emailCandidato;
         this.telefone = telefoneCandidato;
+        this.endereco = enderecoCandidato;
         this.linkLinkedIn = linkLinkedInCandidato;
     }
 
@@ -86,6 +93,9 @@ public class Curriculo extends Cadastro {
         atalhos.pularLinha();
 
         System.out.printf("Telefone: %s \n", telefone);
+        atalhos.pularLinha();
+
+        System.out.printf("Endereço: %s \n", endereco);
         atalhos.pularLinha();
         
         System.out.printf("LinkedIn: %s \n", linkLinkedIn);
@@ -127,6 +137,10 @@ public class Curriculo extends Cadastro {
         atalhos.escreverMensagem("Telefone: ");
         String telefone = sc.nextLine();
         setNome(telefone);
+
+        atalhos.escreverMensagem("Endereço: ");
+        String endereco = sc.nextLine();
+        setNome(endereco);
 
         atalhos.pularLinha();
 
